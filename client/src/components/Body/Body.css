@@ -1,0 +1,162 @@
+.bodyWrapper{
+    width: 100%;
+    min-height: 35vh;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.bodyWrapper .item{
+    min-height: 35vh;
+    padding: 4%;
+    display: flex;
+}
+
+.bodyWrapper .info1 p{
+    margin: auto;
+}
+
+.bodyWrapper .info2 p{
+    margin: auto;
+}
+
+.bodyWrapper .info3 p{
+    margin: auto;
+}
+
+
+/* Destaque */
+
+.destaques{
+    width: 100%;
+    height: 100vh;
+    background-color: #4F4F4F;
+    position: relative;
+}
+
+.destaques .title{
+    position: absolute;
+    top: 8%;
+    left: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.destaques .title h1{
+    text-align: center;
+    font-size: 35px;
+    color: #ffffff;
+    border-bottom: 3px solid red;
+    width: auto;
+    display: inline-block;
+}
+
+
+.alugarApar{
+    width: 100%;
+    height: 70vh;
+    background-color: #3C3C3C;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.alugarApar .imageSide{
+    flex: 1;
+    background: url('../../assets/buil.jpeg') no-repeat center;
+    background-size: cover;
+}
+
+.alugarApar .textSide{
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.alugarApar .textSide .alug{
+    flex: 1;
+    display: flex;
+}
+
+.alugarApar .textSide .alug h1{
+    margin: auto;
+    font-size: 65px;
+    color: #ffffff;
+}
+
+.alugarApar .textSide .btnAlugar{
+    flex: 1;
+    display: flex;
+}
+
+.alugarApar .textSide .btnAlugar button{   
+    margin: auto;
+    padding: 4%;
+    width: 50%;
+    font-size: 35px;
+    background-color: #FF0000;
+    border: none;
+    cursor: pointer;
+}
+
+.divider{
+    width: 100%;
+    height: 30px;
+    background-color: #4F4F4F;
+}
+
+/* ESCOLHA */
+
+.escolhaNois{
+    width: 100%;
+    height: 80vh;
+}
+
+.escolhaNois .titleEscolha{
+    text-align: center;
+    padding: 2%;
+}
+
+.escolhaNois .titleEscolha h1{
+    border-bottom: 3px solid black;
+    display: inline-block;
+}
+
+/* CONTATO */
+.contato{
+    width: 100%;
+    height: 100vh;
+    background-color: #4F4F4F;
+}
+
+
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .bodyWrapper{
+        flex-flow: column nowrap;
+    }
+
+    .alugarApar{
+        flex-flow: column nowrap;
+    }
+
+    .alugarApar .textSide .alug h1{
+        font-size: 35px;
+    }
+
+    .alugarApar .textSide .btnAlugar button{
+        padding: 3%;
+        font-size: 25px;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

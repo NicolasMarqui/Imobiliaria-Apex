@@ -1,0 +1,90 @@
+.showWrapper{
+    width: 90%;
+    min-height: 250px;
+    background-color: #ffffff;
+    margin: 2% auto;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.showWrapper .img{
+    flex: 1;
+}
+
+.showWrapper .houseInfo{
+    flex: 2;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.showWrapper .houseInfo .houseStatus{
+    flex: 1;
+}
+
+.showWrapper .houseInfo .housePricing{
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.housePricing .price{
+    flex: 1;
+    display: flex;
+}
+
+.housePricing .price p{
+    margin: auto;
+    font-size: 35px;
+}
+
+.housePricing .buyOrSee{
+    flex: 1;
+    display: flex;
+    flex-flow: column-reverse nowrap;
+}
+
+.housePricing .buyOrSee button{
+    margin: auto;
+    padding: 4%;
+    width: 50%;
+    border: none;
+    cursor: pointer;
+}
+
+.housePricing .buyOrSee button:nth-child(1){
+    background-color: #FF0000;
+}
+
+.housePricing .buyOrSee button:nth-child(2){
+    background-color: #FB8700;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .showWrapper{
+        flex-flow: column nowrap;
+    }
+
+    .showWrapper .houseInfo{
+        flex-flow: column nowrap;
+    }
+
+    .showWrapper .houseInfo .housePricing{
+        flex-flow: column nowrap;
+    }
+} 
+
+
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
+
