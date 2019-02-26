@@ -56,9 +56,11 @@ export default class Alugar extends Component {
                 <div className="mainResults">
                    {
                        this.state.casas.map(value => (
-                           <AlugarCasa valorAluguel={value.valorDoAluguel}
+                           <AlugarCasa 
+                           valorAluguel={value.valorDoAluguel}
                             mainImage={value.imagensDaCasa[0]}
-                            key={value._id}/>
+                            key={value._id}
+                            id={value._id}/>
                        ))
                    }
                 </div>

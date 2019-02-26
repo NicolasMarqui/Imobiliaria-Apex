@@ -18,10 +18,9 @@ export default function Nav(props) {
       </div>
       <div className="navItems">
         <ul>
-            <li><a href="_">Home</a></li>
-            <li><a href="_">Alugar</a></li>
-            <li><a href="_">Vender</a></li>
-            <li><a href="_">Comprar</a></li>
+            <Link to="/" style={{'color': 'black'}}><li>Home</li></Link>
+            <Link to="/alugar" style={{'color': 'black'}}><li>Alugar</li></Link>
+            <Link to="/" style={{'color': 'black'}}><li>Comprar</li></Link>
             <li><a href="_" className="redBg">Contato</a></li>
         </ul>
       </div>

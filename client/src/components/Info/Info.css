@@ -1,0 +1,19 @@
+.mainWrapper{
+    width: 100%;
+    min-height: 100vh;
+    background-color: #555555;
+}
+
+.mainWrapper .secondWrapper{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+}
+
+.mainWrapper .secondWrapper .images{
+    flex: 1;
+}
+
+.mainWrapper .secondWrapper .info{
+    flex: 1;
+}
