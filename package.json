@@ -1,0 +1,33 @@
+{
+  "name": "imobiliaria",
+  "version": "1.0.0",
+  "description": "Real State website",
+  "main": "server.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicolasMarqui/Imobiliaria-Apex.git"
+  },
+  "author": "Nicolas Marqui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/NicolasMarqui/Imobiliaria-Apex/issues"
+  },
+  "homepage": "https://github.com/NicolasMarqui/Imobiliaria-Apex#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "concurrently": "^4.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "mongoose": "^5.4.15"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}

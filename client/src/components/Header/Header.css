@@ -48,7 +48,10 @@
   
   .headerWrap .centerText p{
     margin-left: 2%;
-    color: preto;
+    color: black;
+    background-color: #ffffff;
+    display: inline-block;
+    opacity: 0.4;
   }
 
   .overlay{

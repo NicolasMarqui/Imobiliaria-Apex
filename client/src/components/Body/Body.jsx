@@ -1,4 +1,4 @@
-import React, { Component , Fragment} from 'react';
+import React, { Component } from 'react';
 import './Body.css';
 
 export default class Body extends Component {
