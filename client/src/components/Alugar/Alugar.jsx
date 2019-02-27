@@ -16,8 +16,10 @@ export default class Alugar extends Component {
     }
 
     componentDidMount = () =>{
-        axios.get('http://localhost:5000/api/casas/alugar')
+        axios.get(`http://localhost:5000/api/casas/tipos/${this.props.match.params.tipo}`)
           .then(res => this.setState({casas: res.data}))
+
+          console.log(this.props.match)
       }
 
   render() {

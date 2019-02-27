@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Arimo|Montserrat');
 
 .headerWrap{
     height: 80vh;
@@ -20,6 +21,8 @@
   .headerWrap .centerText h1{
     font-size: 55px;
     padding: 4% 3% 0 3%;
+    /* font-family: 'Montserrat', sans-serif; */
+    font-family: 'Arimo', sans-serif;
   }
   
   .headerWrap .centerText input{
@@ -48,6 +51,7 @@
   
   .headerWrap .centerText p{
     margin-left: 2%;
+    margin-top: 0.7%;
     color: black;
     background-color: #ffffff;
     display: inline-block;
@@ -62,6 +66,7 @@
 @media only screen and (max-width: 600px) {
   .headerWrap .centerText{
     text-align: center;
+    margin-top: 8%;
   }
 
   .headerWrap .overlay{
@@ -72,7 +77,7 @@
     left: 0;
     z-index: 2;
     background-color: #ffffff;
-    opacity: 0.3;
+    opacity: 0.4;
     display: flex;
   }
 
@@ -85,7 +90,7 @@
 
   .headerWrap .centerText input{
     font-size: 25px;
-    width: 50%;
+    width: 60%;
   }
 
   .headerWrap .centerText select{

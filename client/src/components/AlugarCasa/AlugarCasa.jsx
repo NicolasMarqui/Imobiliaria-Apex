@@ -9,7 +9,7 @@ import House from '../../assets/bg1.jpeg';
 export default class AlugarCasa extends Component {
   render() {
 
-    const {id,  mainImage, endereco, valorAluguel, areaTerreno, areaConstruida, numeroQuartos, numeroBanheiro, vagasGaragem, prontaParaMudar } = this.props;
+    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, areaConstruida, numeroQuartos, numeroBanheiro, vagasGaragem, prontaParaMudar } = this.props;
 
     return (
       <React.Fragment>
@@ -26,7 +26,7 @@ export default class AlugarCasa extends Component {
                     </div>
                     <div className="buyOrSee">
                         <button><Link to={`/info/${id}`}>Mais Informaçoes</Link></button>
-                        <button>Alugar</button>
+                        <button>{tipo === 'alugar' ? 'Alugar' : 'Comprar'}</button>
                     </div>
                 </div>
             </div>

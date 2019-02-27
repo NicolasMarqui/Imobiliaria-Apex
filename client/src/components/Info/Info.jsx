@@ -31,7 +31,9 @@ export default class Info extends Component {
                         <div className="images" style={{'backgroundImage': `url(${cr.imagensDaCasa[0]})`, 'backgroundPosition': 'center', 'backGroundRepeat': 'no-repeat', 'backgroundSize': 'cover'}}>
                         </div>
                         <div className="info">
-
+                          <div className="centerInfo">
+                            
+                          </div>
                         </div>
                     </div>
                 ))

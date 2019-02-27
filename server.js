@@ -6,6 +6,11 @@ const cors = require('cors');
 
 app.use(cors());
 
+let options = {
+    server: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+    replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+  };
+
 const db = require('./config/keys').MONGO_URI;
 const Alugar = require('./routes/api/Alugar');
 

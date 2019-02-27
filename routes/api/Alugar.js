@@ -6,6 +6,7 @@ const casasParaAlugar = require('../../models/AlugarCasa');
 route.post('/addalugar', (req, res) => {
     
     const novaCasa = new casasParaAlugar({
+        type: req.body.type.toLowerCase(),
         endereco: req.body.endereco.toLowerCase(),
         numeroDaCasa: req.body.numeroDaCasa,
         valorDoAluguel: req.body.valorDoAluguel,
@@ -25,15 +26,25 @@ route.post('/addalugar', (req, res) => {
 
 })
 
-route.get('/alugar', (req, res) => {
+route.get('/tipos/:tipo', (req, res) => {
     casasParaAlugar
-        .find({})
-        .then(casas => res.send(casas))
+        .find({tipo: req.params.tipo})
+        .then(casas => res.json(casas))
         .catch(err => console.log(err));
+
+        console.log(req.params.tipo)
+})
+
+route.get('/all', (req, res) => {
+    casasParaAlugar.find({},(err, todas) => {
+        if(err) throw new err;
+
+        res.json(todas)
+    })
 })
 
 route.get('/search/:name', (req, res) => {
-    casasParaAlugar.find({ endereco: req.params.name }, (err, casas) => {
+    casasParaAlugar.find({ endereco: req.params.name , tipo: req.query.tipo}, (err, casas) => {
         if(err) throw new err;
 
         res.json(casas);

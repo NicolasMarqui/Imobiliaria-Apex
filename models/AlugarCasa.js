@@ -10,6 +10,10 @@ const casasParaAlugar = new Schema({
         type: Number,
         required: true,
     },
+    tipo:{
+        type: String,
+        required: true,
+    },
     valorDoAluguel:{
         type: Number,
         required: true,

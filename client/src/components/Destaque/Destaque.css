@@ -1,0 +1,84 @@
+.wdestWrapper{
+    height: 450px;
+    width: 30%;
+    background-color: #ffffff;
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+}
+
+.wdestWrapper .arrow-right{
+    position: absolute;
+    top: 50%;
+    right: 2%;
+    display: none;
+}
+
+.wdestWrapper .newImg{
+    flex: 1;
+}
+
+.wdestWrapper .info{
+    flex: 1;
+}
+
+.wdestWrapper .info .titleInfo{
+    padding: 3%;
+}
+
+.wdestWrapper .info .infoQuartos{
+    display: flex;
+    padding: 5%;
+}
+
+.wdestWrapper .info .infoQuartos i{
+    padding: 2%;
+}
+
+.wdestWrapper .info .infoQuartos .item{
+    flex: 1;
+}
+
+.wdestWrapper .info .buttons{
+    padding: 4%;
+}
+
+.wdestWrapper .info .buttons button{
+    padding: 2%;
+    border: none;
+    cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .wdestWrapper{
+        width: 70%;
+        margin-bottom: 5%;
+    }
+
+
+    .wdestWrapper .arrow-right{
+        display: none;
+        cursor: pointer;
+    }
+
+    .wdestWrapper .info .infoQuartos{
+        flex-flow: column nowrap;
+    }
+
+    .wdestWrapper .info .infoQuartos .item{
+        flex-flow: column nowrap;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}
