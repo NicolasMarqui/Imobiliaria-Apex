@@ -14,6 +14,10 @@ const casasParaAlugar = new Schema({
         type: String,
         required: true,
     },
+    descricao: {
+        type: String,
+        required: false,
+    },
     valorDoAluguel:{
         type: Number,
         required: true,

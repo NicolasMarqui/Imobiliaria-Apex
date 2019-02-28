@@ -1,7 +1,7 @@
 .mainWrapper{
     width: 100%;
     min-height: 100vh;
-    background-color: #555555;
+    /* background-color: #555555; */
 }
 
 .mainWrapper .secondWrapper{
@@ -11,7 +11,7 @@
 }
 
 .mainWrapper .secondWrapper .images{
-    flex: 1;
+    flex: 1.5;
 }
 
 .mainWrapper .secondWrapper .info{
@@ -22,8 +22,92 @@
 .mainWrapper .secondWrapper .info .centerInfo{
     width: 70%;
     min-height: 400px;
-    border: 2px solid red;
     margin: auto;
+    display: flex;
+    /* border: 2px solid red; */
+}
+
+.centerInfo .mainDiv{
+    width: 100%;
+    min-height: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.centerInfo .mainDiv .ender{
+    width: 100%;
+    padding: 2%;
+    text-align: center;
+}
+
+.centerInfo .mainDiv .ender h2{
+    font-size: 55px;
+    text-transform: uppercase;
+    padding: 2%;
+}
+
+.centerInfo .outrasInfo{
+    width: 100%;
+    display: flex;
+    margin: auto;
+}
+
+.centerInfo .outrasInfo .leftSide{
+    /* border: 2px solid green; */
+    flex: 1;
+    text-align: center;
+}
+
+.centerInfo .outrasInfo .rightSide{
+    /* border: 2px solid green; */
+    flex: 1;
+    text-align: center;
+}
+
+.centerInfo .arrowDown{
+    /* border: 2px solid blue; */
+    text-align: center;
+}
+
+.centerInfo .arrowDown i{
+    padding: 2%;
+    cursor: pointer;
+}
+
+.showInfoPrice{
+    width: 100%;
+    min-height: 50vh;
+    background-color: #555555;
+    display: flex;
+    align-items: center;
+}
+
+.showInfoPrice .itemInfo{
+    width: 30%;
+    margin: auto;
+    text-align: center;
+}
+
+.showInfoPrice .dummyText{
+    color: #ffffff;
+}
+
+.showInfoPrice .dummyText h1{
+    border-bottom: 2px solid red;
+    display: inline-block;
+}
+
+.showInfoPrice .infoCasa{
+    color: #fff;
+}
+
+.showInfoPrice .precoCasa h5{
+    color: #fff;
+}
+
+.showInfoPrice .precoCasa p{
+    font-size: 35px;
+    color: #fff;
 }
 
 
@@ -33,6 +117,23 @@
         flex-flow: column nowrap;
     }
 
+    .centerInfo .mainDiv .ender h2{
+        font-size: 45px;
+        text-transform: uppercase;
+    }
+
+    .showInfoPrice{
+        flex-flow: column-reverse nowrap;
+        min-height: 70vh;
+    }
+
+    .showInfoPrice .itemInfo{
+        width: 100%;
+    }
+
+    .showInfoPrice .infoCasa p{
+        padding: 8%;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

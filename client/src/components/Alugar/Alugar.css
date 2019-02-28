@@ -80,6 +80,10 @@
     .sideNav{
         display: none;
     }
+
+    .valorResultado{
+        font-size: 10px;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */

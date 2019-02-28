@@ -2,16 +2,19 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './Alugar.css';
 import axios from 'axios';
+import queryString from 'query-string';
+import { withRouter } from 'react-router-dom';
 
 import AlugarCasa from '../AlugarCasa/AlugarCasa';
 
-export default class Alugar extends Component {
+class Alugar extends Component {
 
     constructor(props){
         super(props);
 
         this.state = {
             casas : [],
+            porPreco: '',
         }
     }
 
@@ -20,6 +23,14 @@ export default class Alugar extends Component {
           .then(res => this.setState({casas: res.data}))
 
           console.log(this.props.match)
+      }
+
+      filterItems = e => {
+          this.props.history.push(`/casas/alugar?sort=${e.target.value}`)
+          const value = queryString.parse(this.props.location.search)
+          axios.get(`http://localhost:5000/api/casas/sort?sort=${value.sort}`)
+            .then(res => console.log(res))
+            .catch(err => console.log(err))
       }
 
   render() {
@@ -35,8 +46,10 @@ export default class Alugar extends Component {
                     <h1>{this.state.casas.length} casas encontrada(s)</h1>
                 </div>
                 <div className="filterPreco">
-                    <select name="" id="">
-                        <option>Preco</option>
+                    <select value={this.state.porPreco} onChange={this.filterItems}>
+                        <option >Ordenar Por</option>
+                        <option value="maior">Maior Preço</option>
+                        <option value="menor">Menor Preço</option>
                     </select>
                 </div>
             </div>
@@ -72,3 +85,5 @@ export default class Alugar extends Component {
     )
   }
 }
+
+export default withRouter(Alugar)

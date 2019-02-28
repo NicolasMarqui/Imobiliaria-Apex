@@ -10,6 +10,7 @@ route.post('/addalugar', (req, res) => {
         endereco: req.body.endereco.toLowerCase(),
         numeroDaCasa: req.body.numeroDaCasa,
         valorDoAluguel: req.body.valorDoAluguel,
+        descricao: req.body.descricao,
         areaDoTerreno: req.body.areaDoTerreno,
         areaConstruida: req.body.areaConstruida,
         numeroDeQuartos:  req.body.numeroDeQuartos,
@@ -31,9 +32,30 @@ route.get('/tipos/:tipo', (req, res) => {
         .find({tipo: req.params.tipo})
         .then(casas => res.json(casas))
         .catch(err => console.log(err));
-
-        console.log(req.params.tipo)
 })
+
+route.get('/sort', (req, res) =>{
+    if(req.query.sort === 'maior'){
+        casasParaAlugar.find({tipo: 'alugar'}).sort({valorDoAluguel: 1}), (err, list) => {
+            if (err) throw err;
+    
+            console.log(list)
+            res.json(list)
+    
+            
+        }
+    }else if(req.query.sort === 'menor'){
+        casasParaAlugar.find({}).sort({valorDoAluguel: -1}), (err, list) => {
+            if (err) throw err;
+    
+            console.log(list)
+            res.json(list)
+    
+            
+        }
+    }
+})
+
 
 route.get('/all', (req, res) => {
     casasParaAlugar.find({},(err, todas) => {
