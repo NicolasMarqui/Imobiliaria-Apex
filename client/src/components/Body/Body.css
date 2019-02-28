@@ -193,10 +193,55 @@
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {} 
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+    .bodyWrapper{
+        flex-flow: column nowrap;
+    }
+
+    .alugarApar{
+        flex-flow: column nowrap;
+    }
+
+    .alugarApar .textSide .alug h1{
+        font-size: 35px;
+    }
+
+    .alugarApar .textSide .btnAlugar button{
+        padding: 3%;
+        font-size: 25px;
+    }
+
+    .destaques{
+        flex-flow: column nowrap;
+    }
+
+    .destaques .showDestaques{
+        flex-flow: column nowrap;
+        margin-top: 25%;
+        position: relative;
+        display: flex;
+    }
+
+    .destaques .title{
+        top: 2%;
+    }
+} 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {} 
+@media only screen and (min-width: 700px) and (max-width: 900px) {
+    .alugarApar{
+        flex-flow: column nowrap;
+    }
+
+    .alugarApar .textSide .alug h1{
+        font-size: 35px;
+    }
+
+    .alugarApar .textSide .btnAlugar button{
+        padding: 3%;
+        font-size: 25px;
+    }
+} 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {} 

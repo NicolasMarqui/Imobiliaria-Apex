@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
-import './Alugar.css';
+import './Comprar.css';
 import axios from 'axios';
 // import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
 
 import AlugarCasa from '../AlugarCasa/AlugarCasa';
 
-class Alugar extends Component {
+class Comprar extends Component {
 
     constructor(props){
         super(props);
@@ -19,18 +19,18 @@ class Alugar extends Component {
     }
 
     componentDidMount = () =>{
-        axios.get(`http://localhost:5000/api/casas/tipos/${this.props.match.params.tipo}`)
+        axios.get(`http://localhost:5000/api/casas/venda/${this.props.match.params.tipo}`)
           .then(res => this.setState({casas: res.data}))
       }
 
       filterItems = e => {
         this.setState({ porPreco: e.target.value });
 
-        axios.get(`http://localhost:5000/api/casas/alugar/sortprice?sort=${e.target.value}`)
+        axios.get(`http://localhost:5000/api/casas/venda/sortprice?sort=${e.target.value}`)
             .then(res => this.setState({ casas: res.data }))
             .catch(err => console.log(err))
 
-            this.props.history.push(`/casas/alugar?sort=${e.target.value}`)
+            this.props.history.push(`/casas/novo/venda?sort=${e.target.value}`)
       }
 
   render() {
@@ -94,4 +94,4 @@ class Alugar extends Component {
   }
 }
 
-export default withRouter(Alugar)
+export default withRouter(Comprar)

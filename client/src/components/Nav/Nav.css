@@ -130,7 +130,27 @@
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {} 
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+  .navWrapper .navItems{
+    display: none;
+}
+
+.navWrapper .navMenu{
+    display: flex;
+    position: absolute;
+    top: 2%;
+    right: 4%;
+    z-index: 3;
+}
+
+.navWrapper .navMenu img{
+    cursor: pointer;
+}
+
+.navWrapper .logoText {
+    padding: 2% 5%;
+}
+} 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {} 

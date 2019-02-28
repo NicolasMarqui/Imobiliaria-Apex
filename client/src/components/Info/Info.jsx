@@ -3,7 +3,6 @@ import Nav from '../Nav/Nav';
 import './Info.css';
 
 import axios from 'axios';
-import { ENGINE_METHOD_ALL } from 'constants';
 
 export default class Info extends Component {
 

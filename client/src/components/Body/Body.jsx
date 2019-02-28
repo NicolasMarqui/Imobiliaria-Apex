@@ -11,12 +11,20 @@ export default class Body extends Component {
     this.state = {
       destaques: [],
       isDone : false,
+      filter: [],
     }
   }
 
   componentDidMount = () => {
     axios.get('http://localhost:5000/api/casas/all')
-      .then(res => this.setState({ destaques: res.data, isDone: true, }))
+      .then(res => {
+        this.setState({ isDone: true , filter: res.data.slice(3,6)})
+      })
+  }
+
+  show = () => {
+    console.log(this.state.destaques[Math.floor(Math.random() * this.state.destaques.length)])
+    console.log(this.state.filter)
   }
 
   render() {
@@ -28,11 +36,11 @@ export default class Body extends Component {
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti a magni ab dicta quidem ea amet, earum voluptate obcaecati ex?</p>
           </div>
           <div className="item info2">
-            <i class="fas fa-key fa-3x"></i>
+            <i className="fas fa-key fa-3x"></i>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti a magni ab dicta quidem ea amet, earum voluptate obcaecati ex?</p>
           </div>
           <div className="item info3">
-            <i class="fas fa-book-open fa-3x"></i>
+            <i className="fas fa-book-open fa-3x"></i>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti a magni ab dicta quidem ea amet, earum voluptate obcaecati ex?</p>
           </div>
         </div>
@@ -42,7 +50,7 @@ export default class Body extends Component {
           </div>
           <div className="showDestaques">
           {
-            this.state.isDone ? this.state.destaques.map((all, i) => (
+            this.state.isDone ? this.state.filter.map((all) => (
                 <Destaque 
                   mainImage={all.imagensDaCasa[0]}
                   key={all._id}
@@ -66,7 +74,7 @@ export default class Body extends Component {
               <h1>Alugar<br />Apartamentos</h1>
             </div>
             <div className="btnAlugar">
-              <button>Alugar</button>
+              <button onClick={this.show}>Alugar</button>
             </div>
           </div>
         </div>

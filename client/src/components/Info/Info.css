@@ -134,10 +134,28 @@
     .showInfoPrice .infoCasa p{
         padding: 8%;
     }
+
+    .mainWrapper .secondWrapper .images{
+        flex: 3;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {} 
+@media only screen and (min-width: 600px) and (max-width: 1000px) {
+    .mainWrapper .secondWrapper{
+        flex-flow: column nowrap;
+    }
+
+    .showInfoPrice{
+        flex-flow: column-reverse nowrap;
+        min-height: 70vh;
+    }
+
+    .showInfoPrice .infoCasa {
+        width: 80%;
+        text-align: justify;
+    }
+} 
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {} 

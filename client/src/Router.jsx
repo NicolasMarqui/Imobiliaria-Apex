@@ -5,6 +5,7 @@ import App from './App';
 import Alugar from './components/Alugar/Alugar';
 import Search from './components/Search/Search';
 import Info from './components/Info/Info';
+import Comprar from './components/Compra/Comprar';
 
 export default function Routering() {
   return (
@@ -13,6 +14,7 @@ export default function Routering() {
           <Switch>
             <Route exact path="/" component={App} />
             <Route exact path="/casas/:tipo" component={Alugar} />
+            <Route exact path="/casas/novo/:tipo" component={Comprar} />
             <Route exact path="/search/:name" component={Search} />
             <Route exatct path="/info/:id" component={Info} />
           </Switch>

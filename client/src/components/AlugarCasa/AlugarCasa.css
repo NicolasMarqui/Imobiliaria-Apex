@@ -19,6 +19,34 @@
 
 .showWrapper .houseInfo .houseStatus{
     flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.showWrapper .houseInfo .houseStatus .showEnder{
+    flex: 1;
+    display: flex;
+}
+
+.showWrapper .houseInfo .houseStatus .showEnder h3{
+    flex: 1;
+    margin: auto;
+    padding: 2%;
+}
+
+.showWrapper .houseInfo .houseStatus .showIcons{
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+}
+
+.showWrapper .houseInfo .houseStatus .showIcons .leftSide{
+    flex: 1;
+}
+
+.showWrapper .houseInfo .houseStatus .showIcons .rightSide{
+    flex: 1;
 }
 
 .showWrapper .houseInfo .housePricing{
@@ -63,6 +91,9 @@
 @media only screen and (max-width: 600px) {
     .showWrapper{
         flex-flow: column nowrap;
+        min-height: 500px;
+        margin-bottom: 8%;
+        margin-top: 8%;
     }
 
     .showWrapper .houseInfo{
@@ -72,18 +103,112 @@
     .showWrapper .houseInfo .housePricing{
         flex-flow: column nowrap;
     }
+
+    .showWrapper .img{
+        flex: 3;
+    }
+
+    .housePricing .price p{
+        font-size: 25px;
+    }
 } 
 
 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {} 
+@media only screen and (min-width: 600px) and (max-width: 700px) {
+    .showWrapper{
+        flex-flow: column nowrap;
+        min-height: 500px;
+        margin-bottom: 8%;
+        margin-top: 8%;
+    }
+
+    .showWrapper .houseInfo{
+        flex-flow: column nowrap;
+    }
+
+    .showWrapper .houseInfo .housePricing{
+        flex-flow: column nowrap;
+    }
+
+    .housePricing .buyOrSee{
+        flex-flow: row nowrap;
+    }
+
+    .showWrapper .img{
+        flex: 3;
+    }
+} 
+
+@media only screen and (min-width: 700px) and (max-width: 768px) {
+    .showWrapper{
+        flex-flow: column nowrap;
+        min-height: 500px;
+        margin-bottom: 8%;
+        margin-top: 8%;
+    }
+
+    .showWrapper .houseInfo{
+        flex-flow: column nowrap;
+    }
+
+    .housePricing .buyOrSee{
+        flex-flow: row nowrap;
+    }
+
+    .showWrapper .img{
+        flex: 3;
+    }
+} 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {} 
+@media only screen and (min-width: 768px) and (max-width: 900px) {
+    .showWrapper{
+        flex-flow: column nowrap;
+        min-height: 500px;
+        margin-bottom: 8%;
+        margin-top: 8%;
+    }
+
+    .showWrapper .houseInfo{
+        flex-flow: column nowrap;
+    }
+
+    .housePricing .buyOrSee{
+        flex-flow: row nowrap;
+    }
+
+    .showWrapper .img{
+        flex: 3;
+    }
+} 
 
 /* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {} 
+@media only screen and (min-width: 900px) and (max-width: 1100px) {
+    .showWrapper{
+        flex-flow: column nowrap;
+        min-height: 500px;
+        margin-bottom: 8%;
+        margin-top: 8%;
+    }
+
+    .showWrapper .houseInfo{
+        flex-flow: column nowrap;
+    }
+
+    .housePricing .buyOrSee{
+        flex-flow: row nowrap;
+    }
+
+    .showWrapper .img{
+        flex: 4;
+    }
+
+    .housePricing .buyOrSee button{
+       padding: 2%;
+    }
+} 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {}

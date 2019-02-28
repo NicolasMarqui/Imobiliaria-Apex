@@ -1,10 +1,10 @@
 import React from 'react';
 import './Nav.css';
 import menu from '../../assets/menu.png';
-import { Link } from 'react-router-dom';
+import { Link , withRouter} from 'react-router-dom';
 import menuClose from '../../assets/colorClose.png'
 
-export default class Nav extends React.Component{
+class Nav extends React.Component{
   constructor(props){
     super(props);
 
@@ -12,7 +12,6 @@ export default class Nav extends React.Component{
       isOpen: false,
     }
   }
-
   render(){
 
     const { color } = this.props;
@@ -31,7 +30,7 @@ export default class Nav extends React.Component{
             <ul>
                 <Link to="/" style={{'color': 'black'}}><li>Home</li></Link>
                 <Link to="/casas/alugar" style={{'color': 'black'}}><li>Alugar</li></Link>
-                <Link to="/casas/venda" style={{'color': 'black'}}><li>Comprar</li></Link>
+                <Link to="/casas/novo/venda" style={{'color': 'black'}}><li>Comprar</li></Link>
                 <li><a href="_" className="redBg">Contato</a></li>
             </ul>
           </div>
@@ -42,7 +41,7 @@ export default class Nav extends React.Component{
            <ul>
                 <Link to="/" style={{'color': 'white'}}><li>Home</li></Link>
                 <Link to="/casas/alugar" style={{'color': 'white'}}><li>Alugar</li></Link>
-                <Link to="/casas/venda" style={{'color': 'white'}}><li>Comprar</li></Link>
+                <Link to="/casas/venda" style={{'color': 'white'}}><li onClick={this.changePage}>Comprar</li></Link>
                 {/* <li><a href="_" className="redBg">Contato</a></li> */}
             </ul>
         </div>
@@ -52,3 +51,5 @@ export default class Nav extends React.Component{
     )
   }
 }
+
+export default withRouter(Nav)

@@ -6,7 +6,7 @@ const casasParaAlugar = require('../../models/AlugarCasa');
 route.post('/addalugar', (req, res) => {
     
     const novaCasa = new casasParaAlugar({
-        type: req.body.type.toLowerCase(),
+        tipo: req.body.tipo.toLowerCase(),
         endereco: req.body.endereco.toLowerCase(),
         numeroDaCasa: req.body.numeroDaCasa,
         valorDoAluguel: req.body.valorDoAluguel,
@@ -28,31 +28,47 @@ route.post('/addalugar', (req, res) => {
 })
 
 route.get('/tipos/:tipo', (req, res) => {
-    casasParaAlugar
-        .find({tipo: req.params.tipo})
-        .then(casas => res.json(casas))
-        .catch(err => console.log(err));
+    casasParaAlugar.find({tipo: req.params.tipo})
+        .then(casa => res.json(casa))
 })
 
-route.get('/sort', (req, res) =>{
-    if(req.query.sort === 'maior'){
-        casasParaAlugar.find({tipo: 'alugar'}).sort({valorDoAluguel: 1}), (err, list) => {
+route.get('/venda/:tipo', (req, res) => {
+    casasParaAlugar.find({tipo: req.params.tipo})
+        .then(casa => res.json(casa))
+})
+
+route.get('/alugar/sortprice', (req, res) =>{
+    if(req.query.sort === 'menor'){
+       casasParaAlugar.find({tipo: 'alugar'}).sort({ valorDoAluguel: 1 }).exec((err, list) => {
+           if (err) throw err;
+
+           res.json(list)
+       })
+    }else{
+        casasParaAlugar.find({tipo: 'alugar'}).sort({ valorDoAluguel: -1 }).exec((err, list) => {
             if (err) throw err;
-    
-            console.log(list)
+ 
             res.json(list)
-    
-            
-        }
-    }else if(req.query.sort === 'menor'){
-        casasParaAlugar.find({}).sort({valorDoAluguel: -1}), (err, list) => {
+        })
+    }
+})
+ 
+route.get('/venda/sortprice', (req, res) =>{
+
+    console.log(req.query.sort)
+
+    if(req.query.sort === 'menor'){
+       casasParaAlugar.find({tipo: 'venda'}).sort({ valorDoAluguel: 1 }).exec((err, list) => {
+           if (err) throw err;
+
+           res.json(list)
+       })
+    }else{
+        casasParaAlugar.find({tipo: 'venda'}).sort({ valorDoAluguel: -1 }).exec((err, list) => {
             if (err) throw err;
-    
-            console.log(list)
+ 
             res.json(list)
-    
-            
-        }
+        })
     }
 })
 

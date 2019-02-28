@@ -49,6 +49,10 @@ const casasParaAlugar = new Schema({
     imagensDaCasa:{
         type:[String],
         required: false,
+    },
+    data: {
+        type: Date,
+        default: Date.now
     }
 })
 
