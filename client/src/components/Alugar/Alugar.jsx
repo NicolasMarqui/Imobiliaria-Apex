@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './Alugar.css';
 import axios from 'axios';
-import queryString from 'query-string';
+// import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
 
 import AlugarCasa from '../AlugarCasa/AlugarCasa';
@@ -17,7 +17,33 @@ class Alugar extends Component {
             porPreco: '',
             minMax: false,
             temCoisa: false,
+            numQuarto: false,
         }
+    }
+
+    filterQuarto = quantidade => {
+        this.setState({ numQuarto: true });
+
+        if(quantidade === 2){
+            axios.get(`http://localhost:5000/api/casas/alugar/filtroQuarto?quantidade=2`)
+                .then(res => this.setState({ casas: res.data }))
+            this.props.history.push('/casas/alugar/?quantidade=2');
+        }else if(quantidade === 3){ 
+            axios.get(`http://localhost:5000/api/casas/alugar/filtroQuarto?quantidade=3`)
+                .then(res => this.setState({ casas: res.data }))
+            this.props.history.push('/casas/alugar/?quantidade=3');
+        }else if(quantidade === 4){
+            axios.get(`http://localhost:5000/api/casas/alugar/filtroQuarto?quantidade=4`)
+                .then(res => this.setState({ casas: res.data }))
+            this.props.history.push('/casas/alugar/?quantidade=4');
+
+            this.props.history.push('/casas/alugar/?min=2500');
+        }else if(quantidade === 5){
+            axios.get(`http://localhost:5000/api/casas/alugar/filtroQuarto?quantidade=5`)
+                .then(res => this.setState({ casas: res.data }))
+            this.props.history.push('/casas/alugar/?quantidade=5');
+        }
+
     }
 
     filterPrice = e => {
@@ -45,7 +71,6 @@ class Alugar extends Component {
     componentDidMount = () =>{
         axios.get(`http://localhost:5000/api/casas/tipos/${this.props.match.params.tipo}`)
           .then(res => this.setState({casas: res.data}))
-
         // console.log(this.props.location.search += '&quartos=4');
       }
 
@@ -56,7 +81,7 @@ class Alugar extends Component {
             .then(res => this.setState({ casas: res.data }))
             .catch(err => console.log(err))
 
-            this.props.history.push(this.props.location.search += `?sort=${e.target.value}`)
+            this.props.history.push(`/casas/alugar?sort=${e.target.value}`)
       }
 
       clean = () => {
@@ -64,7 +89,7 @@ class Alugar extends Component {
         .then(res => this.setState({ casas: res.data }))
         .catch(err => console.log(err))
 
-        this.setState({ temCoisa: false })
+        this.setState({ temCoisa: false , numQuarto: false})
 
         this.props.history.push(`/casas/alugar`)
       }
@@ -78,15 +103,15 @@ class Alugar extends Component {
                 <div className="filtro">
                     <h2>Filtros</h2>
                     <br/>
-                    <button style={this.state.temCoisa ? {'display':'inline-block'} : {'display': 'none'}} 
+                    <button style={this.state.temCoisa || this.state.numQuarto ? {'display':'inline-block'} : {'display': 'none'}} 
                     onClick={this.clean}
-                    ><i className="fas fa-times"></i>Limpar Filtros</button>
+                    ><i className="fas fa-times"></i> Limpar Filtros</button>
                 </div>
                 <div className="valorResultado">
                     <h3>{this.state.casas.length} casas encontrada(s)</h3>
                 </div>
                 <div className="filterPreco">
-                    <select value={this.state.porPreco} onChange={this.filterItems} disabled={this.state.temCoisa ? true : false}>
+                    <select value={this.state.porPreco} onChange={this.filterItems} >
                         <option value="maior">Ordenar Por</option>
                         <option value="maior">Maior Preço</option>
                         <option value="menor">Menor Preço</option>
@@ -105,8 +130,13 @@ class Alugar extends Component {
                         </div>
                     </div>
                     <div className="caixa preco">
-                        <div className="centerFiltro">
+                        <div className="numQuarto centerFiltro">
                             <code>Número de Quartos</code>
+                            <br/>
+                            <button style={this.state.numQuarto ? {'borderBottom': '2px solid green'} : {'borderBottom': '2px solid red'}} onClick={() => this.filterQuarto(2)}>2 Quartos</button><br/>
+                            <button style={this.state.numQuarto ? {'borderBottom': '2px solid green'} : {'borderBottom': '2px solid red'}} onClick={() => this.filterQuarto(3)}>3 Quartos</button><br/>
+                            <button style={this.state.numQuarto ? {'borderBottom': '2px solid green'} : {'borderBottom': '2px solid red'}} onClick={() => this.filterQuarto(4)}>4 Quartos</button><br/>
+                            <button style={this.state.numQuarto ? {'borderBottom': '2px solid green'} : {'borderBottom': '2px solid red'}} onClick={() => this.filterQuarto(5)}>4+ Quartos</button>
                         </div>
                     </div>
                     <div className="caixa preco">

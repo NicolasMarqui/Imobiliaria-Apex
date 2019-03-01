@@ -51,6 +51,7 @@
     padding: 2%;
     text-align: center;
     color: #ffffff;
+    cursor: pointer;
 }
 
 
@@ -112,7 +113,28 @@
     transition: 0.5s ease-in all;
 }
 
+.precoEntre button, .numQuarto button:focus{
+    outline: none;
+}
+
 .precoEntre button:hover{
+    transform: scale(1.3);
+}
+
+.numQuarto code{
+    padding-bottom: 5%;
+}
+
+.numQuarto button{
+    margin: 4%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid red;
+    cursor: pointer;
+    transition: 0.5s ease-in all;
+}
+
+.numQuarto button:hover{
     transform: scale(1.3);
 }
 

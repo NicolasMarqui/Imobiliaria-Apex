@@ -54,9 +54,6 @@ route.get('/alugar/sortprice', (req, res) =>{
 })
  
 route.get('/venda/sortprice', (req, res) =>{
-
-    console.log(req.query.sort)
-
     if(req.query.sort === 'menor'){
        casasParaAlugar.find({tipo: 'venda'}).sort({ valorDoAluguel: 1 }).exec((err, list) => {
            if (err) throw err;
@@ -112,6 +109,23 @@ route.get('/alugar/filtroPreco', (req, res) => {
             if (err) throw err;
     
             res.json(sort)
+        })
+    }
+})
+
+route.get('/alugar/filtroQuarto', (req, res) => {
+
+    if(req.query.quantidade === 5){
+        casasParaAlugar.find({ tipo: 'alugar' , valorDoAluguel: {$gte: req.query.quantidade}}).exec((err, list) => {
+            if (err) throw err;
+    
+            res.json(list)
+        })
+    }else{
+        casasParaAlugar.find({ tipo: 'alugar' }).where('numeroDeQuartos').equals(req.query.quantidade).exec((err, list) => {
+            if (err) throw err;
+    
+            res.json(list)
         })
     }
 })
