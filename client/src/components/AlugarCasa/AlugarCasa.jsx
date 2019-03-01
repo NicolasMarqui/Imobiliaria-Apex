@@ -43,7 +43,7 @@ export default class AlugarCasa extends Component {
                         <p>R$ {tipo === 'alugar' ? `${valorAluguel},00 /mês` : `${valorAluguel},00`}</p>
                     </div>
                     <div className="buyOrSee">
-                        <button><Link to={`/info/${id}`}>Mais Informaçoes</Link></button>
+                        <button><Link to={`/info/${id}`} style={{'color': 'black', 'textDecoration': 'none'}}>Mais Informaçoes</Link></button>
                         <button>{tipo === 'alugar' ? 'Alugar' : 'Comprar'}</button>
                     </div>
                 </div>

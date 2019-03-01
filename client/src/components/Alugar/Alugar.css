@@ -21,6 +21,13 @@
     padding-left: 1%;
 }
 
+.alugarWrapper .titleAndOther .filtro button{
+    border: none;
+    padding: 2%;
+    margin: 2% 0;
+    cursor: pointer;
+}
+
 .alugarWrapper .titleAndOther .filtro h2{
     border-bottom: 3px solid red;
     display: inline-block;
@@ -73,6 +80,40 @@
     width: 250px;
     height: 200px;
     margin: 5% auto;
+    display: flex;
+}
+
+.alugarWrapper .resultsFlex .sideNav .caixa .centerFiltro{
+    width: 80%;
+    height: 80%;
+    margin: auto;
+    /* border: 2px solid red; */
+    text-align: center;
+}    
+
+.alugarWrapper .resultsFlex .sideNav .caixa .centerFiltro h1, label, input{
+    margin: 0 auto;
+}
+
+.alugarWrapper .resultsFlex .sideNav .caixa .centerFiltro label, input{
+    padding: 2%;
+}
+
+.precoEntre code{
+    padding-bottom: 5%;
+}
+
+.precoEntre button{
+    margin: 5%;
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid red;
+    cursor: pointer;
+    transition: 0.5s ease-in all;
+}
+
+.precoEntre button:hover{
+    transform: scale(1.3);
 }
 
 /* Extra small devices (phones, 600px and down) */

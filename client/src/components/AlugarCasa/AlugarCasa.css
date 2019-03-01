@@ -44,10 +44,18 @@
 .showWrapper .houseInfo .houseStatus .showIcons .leftSide{
     flex: 1;
 }
+/* 
+.showWrapper .houseInfo .houseStatus .showIcons .leftSide h3{
+    font-size: 20px;
+} */
 
 .showWrapper .houseInfo .houseStatus .showIcons .rightSide{
     flex: 1;
 }
+/* 
+.showWrapper .houseInfo .houseStatus .showIcons .rightSide h3{
+    font-size: 20px;
+} */
 
 .showWrapper .houseInfo .housePricing{
     flex: 1;
@@ -74,7 +82,7 @@
 .housePricing .buyOrSee button{
     margin: auto;
     padding: 4%;
-    width: 50%;
+    width: 60%;
     border: none;
     cursor: pointer;
 }

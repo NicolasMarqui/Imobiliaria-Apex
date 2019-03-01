@@ -93,9 +93,27 @@ route.get('/info/:id', (req, res) => {
     casasParaAlugar.find({ _id: req.params.id } , (err, casa) => {
         if(err) throw new err;
 
-        res.json(casa);
+        res.json(casa); 
 
     })
+})
+
+
+route.get('/alugar/filtroPreco', (req, res) => {
+
+    if(req.query.max === undefined){
+        casasParaAlugar.find({tipo : 'alugar', valorDoAluguel:{$gte: req.query.min}}).exec((err, sort) => {
+            if (err) throw err;
+    
+            res.json(sort)
+        })
+    }else{
+        casasParaAlugar.find({tipo : 'alugar', valorDoAluguel:{$gte: req.query.min, $lte: req.query.max}}).exec((err, sort) => {
+            if (err) throw err;
+    
+            res.json(sort)
+        })
+    }
 })
 
 module.exports = route;

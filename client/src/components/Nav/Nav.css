@@ -11,6 +11,10 @@
     flex: 1;
     z-index: 3;
   }
+
+  .navWrapper .logoText h1{
+    border: none;
+  }
   
   .navWrapper .logoText h1 span{
     color: red;
