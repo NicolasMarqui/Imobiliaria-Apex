@@ -1,0 +1,107 @@
+.filterWrap{
+    width: 100%;
+    min-height: 200px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    background-color: #ffffff;
+}
+
+.filterWrap .innerWrapper{
+    width: 80%;
+    min-height: 180px;
+    /* border: 2px solid blue; */
+    margin: 2% auto;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.filterWrap .innerWrapper .topWrapper{
+    flex: 1;
+    /* border: 2px solid green; */
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.topWrapper select, input{
+    width: 30%;
+    margin: 1%;
+    height: 20%;
+    font-size: 20px;
+    padding: 1%;
+}
+
+.filterWrap .innerWrapper .bottomWrapper{
+    flex: 1;
+    /* border: 2px solid purple; */
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.bottomWrapper select{
+    width: 30%;
+    margin: 1%;
+    height: 20%;
+    font-size: 20px;
+    padding: 1%;
+}
+
+.filterWrap button{
+    margin: 1%;
+    padding: 1%;
+    width: 30%;
+    border: none;
+    background-color: black;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .filterWrap .innerWrapper .topWrapper{
+        flex-flow: column nowrap;
+    }
+
+    .filterWrap .innerWrapper .bottomWrapper{
+        flex-flow: column nowrap;
+    }
+
+    .filterWrap .innerWrapper{
+        flex-flow: row nowrap;
+    }
+
+    .topWrapper select, input{
+        width: 90%;
+        margin: 1%;
+        height: 20%;
+        font-size: 20px;
+        padding: 1%;
+    }
+
+    .bottomWrapper select, input{
+        width: 90%;
+        margin: 1%;
+        height: 20%;
+        font-size: 20px;
+        padding: 1%;
+    }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './AlugarCasa.css';
-// import axios from 'axios';
-
 import { Link } from 'react-router-dom';
 
-// import House from '../../assets/bg1.jpeg';
+const AlugarCasa = props => {
 
-export default class AlugarCasa extends Component {
-  render() {
-
-    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, numeroQuartos, numeroBanheiro, vagasGaragem, numero } = this.props;
+    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, numeroQuartos, numeroBanheiro, vagasGaragem, numero } = props;
 
     return (
       <React.Fragment>
@@ -51,5 +46,7 @@ export default class AlugarCasa extends Component {
         </div>
       </React.Fragment>
     )
-  }
 }
+
+
+export default AlugarCasa;

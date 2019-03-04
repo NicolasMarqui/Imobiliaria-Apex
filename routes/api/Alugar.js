@@ -115,6 +115,8 @@ route.get('/alugar/filtroPreco', (req, res) => {
 
 route.get('/alugar/filtroQuarto', (req, res) => {
 
+    console.log(req.query)
+
     if(req.query.quantidade === 5){
         casasParaAlugar.find({ tipo: 'alugar' , valorDoAluguel: {$gte: req.query.quantidade}}).exec((err, list) => {
             if (err) throw err;
@@ -129,5 +131,31 @@ route.get('/alugar/filtroQuarto', (req, res) => {
         })
     }
 })
+
+route.get('/casas', (req, res) => {
+    if(parseInt(req.query.banheiros) === 5){
+        console.log('funfa')
+        casasParaAlugar.find({ tipo: req.query.tipo })
+        .where('numeroDeQuartos').equals(req.query.quartos)
+        .where('numeroDeBanheiros').gt(req.query.banheiros)
+        .where('valorDoAluguel').equals(req.query.valor)
+        .where('vagasNaGaragem').equals(req.query.vagas).exec((err, results) => {
+            if(err) throw err;
+
+            console.log(results)
+            res.json(results)
+        }) 
+    }else{
+        casasParaAlugar.find({ tipo: req.query.tipo })
+        .where('numeroDeQuartos').equals(req.query.quartos)
+        .where('numeroDeBanheiros').equals(req.query.banheiros)
+        .where('valorDoAluguel').equals(req.query.valor)
+        .where('vagasNaGaragem').equals(req.query.vagas).exec((err, results) => {
+            if(err) throw err;
+
+            res.json(results)
+        }) 
+    }
+}) 
 
 module.exports = route;

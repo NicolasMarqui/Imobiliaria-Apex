@@ -50,6 +50,10 @@ const casasParaAlugar = new Schema({
         type:[String],
         required: false,
     },
+    isApartamento: {
+        type: Boolean,
+        required: false,
+    },
     data: {
         type: Date,
         default: Date.now

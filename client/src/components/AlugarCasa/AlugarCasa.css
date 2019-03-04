@@ -89,10 +89,12 @@
 
 .housePricing .buyOrSee button:nth-child(1){
     background-color: #FF0000;
+    color: #ffffff;
 }
 
 .housePricing .buyOrSee button:nth-child(2){
     background-color: #FB8700;
+    color: #ffffff;
 }
 
 /* Extra small devices (phones, 600px and down) */

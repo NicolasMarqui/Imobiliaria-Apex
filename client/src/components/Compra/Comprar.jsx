@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './Comprar.css';
 import axios from 'axios';
-// import queryString from 'query-string';
 import { withRouter } from 'react-router-dom';
+import Filtros from '../Filtros/Filtros';
 
 import AlugarCasa from '../AlugarCasa/AlugarCasa';
 
@@ -15,22 +15,28 @@ class Comprar extends Component {
         this.state = {
             casas : [],
             porPreco: '',
+            temCoisa: false,
         }
     }
 
     componentDidMount = () =>{
         axios.get(`http://localhost:5000/api/casas/venda/${this.props.match.params.tipo}`)
           .then(res => this.setState({casas: res.data}))
+
+          this.props.history.push(`/casas/novo/venda`);
+
+        
       }
 
-      filterItems = e => {
-        this.setState({ porPreco: e.target.value });
+      saveData = arr => {
+          this.setState({ casas: arr , temCoisa: true})
+      }
 
-        axios.get(`http://localhost:5000/api/casas/venda/sortprice?sort=${e.target.value}`)
-            .then(res => this.setState({ casas: res.data }))
-            .catch(err => console.log(err))
-
-            this.props.history.push(`/casas/novo/venda?sort=${e.target.value}`)
+      clear = () => {
+        axios.get(`http://localhost:5000/api/casas/tipos/venda`)
+        .then(res => this.setState({ casas: res.data }))
+        .catch(err => console.log(err))
+          this.props.history.push(`/casas/novo/venda`);
       }
 
   render() {
@@ -38,37 +44,19 @@ class Comprar extends Component {
       <React.Fragment>
         <div className="alugarWrapper">
             <Nav color="white" />
+            <Filtros tipo="venda" getData={this.saveData}/>
             <div className="titleAndOther">
                 <div className="filtro">
-                    <h2>Filtros</h2>
+                    <button style={this.state.temCoisa  ? {'display':'inline-block'} : {'display': 'none'}} 
+                    onClick={this.clear}
+                    ><i className="fas fa-times"></i> Limpar Filtros</button>
                 </div>
                 <div className="valorResultado">
                     <h3>{this.state.casas.length} casas encontrada(s)</h3>
                 </div>
-                <div className="filterPreco">
-                    <select value={this.state.porPreco} onChange={this.filterItems}>
-                        <option value="maior">Ordenar Por</option>
-                        <option value="maior">Maior Preço</option>
-                        <option value="menor">Menor Preço</option>
-                    </select>
-                </div>
             </div>
             <div className="resultsFlex">
-                <div className="sideNav">
-                    <div className="caixa preco">
-                        <h2>ALOO</h2>
-
-                    </div>
-                    <div className="caixa preco">
-                        <h2>ALOO</h2>
-                    </div>
-                    <div className="caixa preco">
-                        <h2>ALOO</h2>
-                    </div>
-                    <div className="caixa preco">
-                        <h2>ALOO</h2>
-                    </div>
-                </div>
+                
                 <div className="mainResults">
                    {
                        this.state.casas.map(value => (

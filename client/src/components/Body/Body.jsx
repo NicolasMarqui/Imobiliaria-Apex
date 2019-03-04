@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Body.css';
 import axios from 'axios';
 import Destaque from '../Destaque/Destaque'
+import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
 export default class Body extends Component {
 
@@ -18,8 +19,14 @@ export default class Body extends Component {
   componentDidMount = () => {
     axios.get('http://localhost:5000/api/casas/all')
       .then(res => {
-        this.setState({ isDone: true , filter: res.data.slice(3,6)})
+        this.setState({ isDone: true , filter: res.data.slice(7 ,10)})
       })
+
+    const provider = new OpenStreetMapProvider();
+
+    provider
+      .search({ query: 'Rua das Copaibas 87, Indaiatuba' })
+      .then((res) => console.log(res))
   }
 
   show = () => {
