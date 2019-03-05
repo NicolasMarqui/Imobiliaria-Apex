@@ -142,7 +142,6 @@ route.get('/casas', (req, res) => {
         .where('vagasNaGaragem').equals(req.query.vagas).exec((err, results) => {
             if(err) throw err;
 
-            console.log(results)
             res.json(results)
         }) 
     }else{
@@ -156,6 +155,15 @@ route.get('/casas', (req, res) => {
             res.json(results)
         }) 
     }
-}) 
+})
+
+route.get('/enderecos', (req, res) => {
+    casasParaAlugar.find({}).select('endeCompleto').exec((err, result) => {
+        if (err) throw err;
+
+        console.log(result)
+        res.json(result)
+    })
+})
 
 module.exports = route;

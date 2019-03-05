@@ -6,6 +6,7 @@ import axios from 'axios';
 import { withRouter } from 'react-router-dom';
 import Filtros from '../Filtros/Filtros';
 import AlugarCasa from '../AlugarCasa/AlugarCasa';
+import Footer from '../Footer/Footer';
 
 class Alugar extends Component {
 
@@ -81,6 +82,7 @@ class Alugar extends Component {
                 </div>
             </div>
         </div>
+        <Footer />
       </React.Fragment>
     )
   }

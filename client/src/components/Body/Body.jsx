@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Body.css';
 import axios from 'axios';
 import Destaque from '../Destaque/Destaque'
-import { OpenStreetMapProvider } from 'leaflet-geosearch';
+// import { OpenStreetMapProvider } from 'leaflet-geosearch';
 
 export default class Body extends Component {
 
@@ -13,26 +13,37 @@ export default class Body extends Component {
       destaques: [],
       isDone : false,
       filter: [],
+      todasLength: [],
     }
   }
 
   componentDidMount = () => {
     axios.get('http://localhost:5000/api/casas/all')
       .then(res => {
-        this.setState({ isDone: true , filter: res.data.slice(7 ,10)})
+        this.setState({ isDone: true , filter: res.data.slice(6,9), todasLength: res.data})
       })
 
-    const provider = new OpenStreetMapProvider();
-
-    provider
-      .search({ query: 'Rua das Copaibas 87, Indaiatuba' })
-      .then((res) => console.log(res))
+    // axios.get('http://localhost:5000/api/casas/enderecos')
+    //   .then(res => {
+    //     this.setState({ enderecos: res.data, ende: true })
+    //   })
   }
 
   show = () => {
     console.log(this.state.destaques[Math.floor(Math.random() * this.state.destaques.length)])
-    console.log(this.state.filter)
   }
+
+  // showData = () => {
+  //   const provider = new OpenStreetMapProvider();
+
+  //   if(this.state.ende){
+  //     this.state.enderecos.map(el => (
+  //       provider
+  //       .search({ query: ` ${el.endeCompleto}, indaiatuba, SP` })
+  //       .then((res) => console.log())
+  //     ))
+  //   }
+  // }
 
   render() {
     return (
@@ -90,9 +101,13 @@ export default class Body extends Component {
           <div className="titleEscolha">
             <h1>Porque<br />escolher nossa empresa?</h1>
           </div>
-        </div>
-        <div className="contato">
-          
+            <div className="lowerBox">
+              <h1>Conheça todas <br /><code>{this.state.todasLength.length}</code><br/>Propriedades</h1>
+            </div>
+            <div className="middleBox">
+              <div className="topMiddle"></div>
+              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quam iste quae veritatis consequatur incidunt totam labore, molestias ea possimus!</p>
+            </div>
         </div>
       </React.Fragment>
     )

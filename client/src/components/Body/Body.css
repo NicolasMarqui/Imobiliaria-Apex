@@ -135,27 +135,68 @@
 
 .escolhaNois{
     width: 100%;
-    height: 80vh;
+    min-height: 80vh;
+    display: flex;
+    position: relative;
+    flex-flow: row nowrap;
 }
 
 .escolhaNois .titleEscolha{
+    position: absolute;
     text-align: center;
-    padding: 2%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
 }
 
 .escolhaNois .titleEscolha h1{
     border-bottom: 3px solid black;
     display: inline-block;
+    padding: 2% 2% 0.5% 2%;
 }
 
-/* CONTATO */
-.contato{
+.escolhaNois .lowerBox{
+    flex: 1;
+    background-color: #ffffff;
+    display: flex;
+    text-align: center;
+}
+
+.escolhaNois .lowerBox h1{
+    margin: auto;
+}
+
+.escolhaNois .lowerBox h1 code{
+    color: red;
+}
+
+.escolhaNois .middleBox{
+    flex: 1;
+    background: url('../../assets/client.jpeg') no-repeat center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+}
+
+.escolhaNois .middleBox .topMiddle{
+    position: absolute;
+    height: 100%;
     width: 100%;
-    height: 100vh;
-    background-color: #4F4F4F;
+    background-color: #ffffff;
+    opacity: 0.8;
 }
 
+.escolhaNois .middleBox p{
+    z-index: 2;
+    margin: auto;
+    width: 40%;
+}
 
+.escolhaNois .topBox{
+    flex: 1;
+    background-color: lightblue;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -189,6 +230,15 @@
 
     .destaques .title{
         top: 2%;
+    }
+
+    .escolhaNois{
+        flex-flow: column-reverse nowrap;
+        min-height: 100vh;
+    }
+
+    .escolhaNois .titleEscolha h1{
+        font-size: 20px;
     }
 } 
 

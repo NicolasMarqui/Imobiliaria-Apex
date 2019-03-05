@@ -26,12 +26,23 @@
     justify-content: space-around;
 }
 
-.topWrapper select, input{
+.topWrapper select{
     width: 30%;
     margin: 1%;
     height: 20%;
     font-size: 20px;
     padding: 1%;
+    border: none;
+    cursor: pointer;
+}
+
+.topWrapper input{
+    width: 30%;
+    margin: 1%;
+    height: 20%;
+    font-size: 20px;
+    padding: 1%;
+    cursor: pointer;
 }
 
 .filterWrap .innerWrapper .bottomWrapper{
@@ -49,6 +60,8 @@
     height: 20%;
     font-size: 20px;
     padding: 1%;
+    border: none;
+    cursor: pointer;
 }
 
 .filterWrap button{

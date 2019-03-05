@@ -67,7 +67,7 @@
     }
 
     .wdestWrapper .info .infoQuartos{
-        flex-flow: column nowrap;
+        flex-flow: row nowrap;
     }
 
     .wdestWrapper .info .infoQuartos .item{
@@ -92,7 +92,7 @@
     }
 
     .wdestWrapper .info .infoQuartos{
-        flex-flow: column nowrap;
+        flex-flow: row nowrap;
     }
 
     .wdestWrapper .info .infoQuartos .item{
