@@ -17,6 +17,7 @@ class Alugar extends Component {
             casas : [],
             porPreco: '',
             temCoisa: false,
+            isGrid: true,
         }
     }
 
@@ -51,18 +52,22 @@ class Alugar extends Component {
             <Filtros getData={this.getFilters} tipo="alugar"/>
             <div className="titleAndOther">
                 <div className="filtro">
+                  <button onClick={() => this.setState({ isGrid: !this.state.isGrid })}
+                  className="showGrid"
+                  ><i className={!this.state.isGrid ? "fas fa-th-large fa-2x" : "fas fa-list fa-2x"}></i></button>
                     <br/>
                     <button style={this.state.temCoisa  ? {'display':'inline-block'} : {'display': 'none'}} 
                     onClick={this.clean}
+                    className="clearFiltro"
                     ><i className="fas fa-times"></i> Limpar Filtros</button>
                 </div>
                 <div className="valorResultado">
-                    <h3>{this.state.casas.length} casas encontrada(s)</h3>
+                    <h3>{this.state.casas.length} casa(s) encontrada(s)</h3>
                 </div>
                 
             </div>
             <div className="resultsFlex">
-                <div className="mainResults">
+                <div className={this.state.isGrid ? "mainResultsGrid" : "mainResults"}>
                    {
                        this.state.casas.map(value => (
                         <AlugarCasa 
@@ -76,7 +81,8 @@ class Alugar extends Component {
                          vagasGaragem={value.vagasNaGaragem}
                          endereco={value.endereco}
                          numero={value.numeroDaCasa}
-                         tipo={value.tipo}/>
+                         tipo={value.tipo}
+                         isGrid={this.state.isGrid}/>
                     ))
                    }
                 </div>

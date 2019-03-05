@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 const AlugarCasa = props => {
 
-    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, numeroQuartos, numeroBanheiro, vagasGaragem, numero } = props;
+    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, numeroQuartos, numeroBanheiro, vagasGaragem, numero , isGrid} = props;
 
     return (
       <React.Fragment>
-        <div className="showWrapper">
+        <div className={isGrid ? "showWrapperGrid" : "showWrapper"}>
             <div className="img" style={{'backgroundImage': `url(${mainImage})`, 'backgroundSize': 'cover', 'backgroundPosition': 'center'}}>
             </div>
-            <div className="houseInfo">
+            <div className={isGrid ? "houseInfoGrid" : "houseInfo"}>
                 <div className="houseStatus">
                   <div className="showEnder">
                     <h3>Localizacão: <br/>{endereco}, n°{numero || ''}</h3>
@@ -34,10 +34,10 @@ const AlugarCasa = props => {
                   </div>
                 </div>
                 <div className="housePricing">
-                    <div className="price">
+                    <div className={isGrid ? "priceGrid" : "price"}>
                         <p>R$ {tipo === 'alugar' ? `${valorAluguel},00 /mês` : `${valorAluguel},00`}</p>
                     </div>
-                    <div className="buyOrSee">
+                    <div className={isGrid ? "buyOrSeeGrid" : "buyOrSee"}>
                         <button><Link to={`/info/${id}`} style={{'color': 'black', 'textDecoration': 'none'}}>Mais Informaçoes</Link></button>
                         <button>{tipo === 'alugar' ? 'Alugar' : 'Comprar'}</button>
                     </div>

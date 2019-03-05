@@ -88,7 +88,15 @@
         flex-flow: row nowrap;
     }
 
-    .topWrapper select, input{
+    .topWrapper select{
+        width: 90%;
+        margin: 1%;
+        height: 20%;
+        font-size: 20px;
+        padding: 1%;
+    }
+
+    .topWrapper input{
         width: 90%;
         margin: 1%;
         height: 20%;
@@ -107,7 +115,6 @@
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
-    
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */

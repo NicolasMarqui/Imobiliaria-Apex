@@ -21,9 +21,10 @@
     padding-left: 1%;
     height: 100px;
     display: flex;
+    position: relative;
 }
 
-.alugarWrapper .titleAndOther .filtro button{
+.alugarWrapper .titleAndOther .filtro .clearFiltro{
     border: none;
     padding: 2%;
     width: 50%;
@@ -31,6 +32,15 @@
     margin: auto;
     background-color: red;
     color: #ffffff;
+}
+
+.showGrid{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }
 
 .alugarWrapper .titleAndOther .filtro h2{
@@ -85,6 +95,15 @@
     width: 70%;
     margin: 0.7% auto;
 }
+
+.mainResultsGrid{
+    flex: 2;
+    background-color: #F2F2F2;
+    width: 70%;
+    margin: 0.7% auto;/*CHANGE 3*/
+    display: flex;
+    flex-flow: row wrap;
+} 
 
 .alugarWrapper .resultsFlex .sideNav .caixa{
     background-color: #ffffff;
@@ -175,6 +194,16 @@
 
     .alugarWrapper .resultsFlex{
         margin-top: 5%;
+    }
+
+    .mainResultsGrid{
+        padding-left: 6%;
+    }
+} 
+
+@media only screen and (min-width: 700px) and (max-width: 768px) {
+    .mainResultsGrid{
+        padding-left: 2%;
     }
 } 
 

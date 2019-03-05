@@ -5,9 +5,24 @@
     margin: 2% auto;
     display: flex;
     flex-flow: row nowrap;
+    text-align: center;
+}
+
+.showWrapperGrid{
+    width: 20%; /*CHANGE 2*/
+    min-height: 470px;
+    background-color: #ffffff;
+    margin: 2% 2% 2% 3%;
+    display: flex;
+    flex-flow: column nowrap; /*CHANGE 1*/
+    text-align: center;
 }
 
 .showWrapper .img{
+    flex: 1;
+}
+
+.showWrapperGrid .img{
     flex: 1;
 }
 
@@ -17,7 +32,19 @@
     flex-flow: row nowrap;
 }
 
+.houseInfoGrid{
+    flex: 2;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
 .showWrapper .houseInfo .houseStatus{
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.showWrapperGrid .houseInfoGrid .houseStatus{
     flex: 1;
     display: flex;
     flex-flow: column nowrap;
@@ -28,11 +55,20 @@
     display: flex;
 }
 
+.showWrapperGrid .houseInfoGrid .houseStatus .showEnder{
+    flex: 1;
+}
+
 .showWrapper .houseInfo .houseStatus .showEnder h3{
     flex: 1;
     margin: auto;
     padding: 2%;
 }
+
+.showWrapperGrid .houseInfoGrid .houseStatus .showEnder h3{
+    flex: 1;
+}
+
 
 .showWrapper .houseInfo .houseStatus .showIcons{
     flex: 1;
@@ -41,25 +77,41 @@
     text-align: center;
 }
 
+.showWrapperGrid .houseInfoGrid .houseStatus .showIcons{
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    text-align: center;
+}
+ 
 .showWrapper .houseInfo .houseStatus .showIcons .leftSide{
     flex: 1;
 }
-/* 
-.showWrapper .houseInfo .houseStatus .showIcons .leftSide h3{
-    font-size: 20px;
-} */
+
+.showWrapperGrid .houseInfoGrid .houseStatus .showIcons .leftSide{
+    flex: 1;
+}
 
 .showWrapper .houseInfo .houseStatus .showIcons .rightSide{
     flex: 1;
 }
-/* 
-.showWrapper .houseInfo .houseStatus .showIcons .rightSide h3{
-    font-size: 20px;
-} */
+
+.showWrapperGrid .houseInfoGrid .houseStatus .showIcons .rightSide{
+    flex: 1;
+}
 
 .showWrapper .houseInfo .housePricing{
     flex: 1;
     display: flex;
+    margin-top: 10%;
+    flex-flow: column nowrap;
+}
+
+
+.showWrapperGrid .houseInfoGrid .housePricing{
+    flex: 1;
+    display: flex;
+    margin-top: 10%;
     flex-flow: column nowrap;
 }
 
@@ -73,10 +125,35 @@
     font-size: 35px;
 }
 
+.housePricing .priceGrid{
+    flex: 1;
+    display: flex;
+}
+
+.priceGrid p{
+    margin: auto;
+    font-size: 18px;
+    border-bottom: 2px solid red;
+}
+
 .housePricing .buyOrSee{
     flex: 1;
     display: flex;
     flex-flow: column-reverse nowrap;
+}
+
+.housePricing .buyOrSeeGrid{
+    flex: 1;
+    display: flex;
+    flex-flow: row-reverse nowrap;
+}
+
+.housePricing .buyOrSeeGrid button{
+    margin: auto;
+    padding: 4%;
+    width: 60%;
+    border: none;
+    cursor: pointer;
 }
 
 .housePricing .buyOrSee button{
@@ -93,6 +170,16 @@
 }
 
 .housePricing .buyOrSee button:nth-child(2){
+    background-color: #FB8700;
+    color: #ffffff;
+}
+
+.housePricing .buyOrSeeGrid button:nth-child(1){
+    background-color: #FF0000;
+    color: #ffffff;
+}
+
+.housePricing .buyOrSeeGrid button:nth-child(2){
     background-color: #FB8700;
     color: #ffffff;
 }
@@ -121,6 +208,13 @@
     .housePricing .price p{
         font-size: 25px;
     }
+
+    .showWrapperGrid{
+        width: 100%;
+        flex-flow: column nowrap; /*CHANGE 1*/
+        text-align: center;
+    }
+
 } 
 
 
@@ -149,6 +243,10 @@
     .showWrapper .img{
         flex: 3;
     }
+
+    .showWrapperGrid{
+        width: 40%;
+    }
 } 
 
 @media only screen and (min-width: 700px) and (max-width: 768px) {
@@ -169,6 +267,10 @@
 
     .showWrapper .img{
         flex: 3;
+    }
+
+    .showWrapperGrid{
+        width: 40%;
     }
 } 
 
@@ -191,6 +293,10 @@
 
     .showWrapper .img{
         flex: 3;
+    }
+
+    .showWrapperGrid{
+        width: 45%;
     }
 } 
 
@@ -218,8 +324,20 @@
     .housePricing .buyOrSee button{
        padding: 2%;
     }
+
+    .showWrapperGrid{
+        width: 45%;
+    }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}
+@media only screen and (max-width: 1271px) {
+    .housePricing .buyOrSeeGrid{
+        flex-flow: column nowrap;
+    }
+
+    .housePricing .buyOrSeeGrid button{
+        width: 100%;
+    }
+}
 
