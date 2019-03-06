@@ -136,10 +136,10 @@ route.get('/casas', (req, res) => {
     if(parseInt(req.query.banheiros) === 5 || parseInt(req.query.quartos) === 5 || parseInt(req.query.vagas) === 5){
         console.log('funfa')
         casasParaAlugar.find({ tipo: req.query.tipo })
-        .where('numeroDeQuartos').gt(req.query.quartos)
-        .where('numeroDeBanheiros').gt(req.query.banheiros)
-        .where('valorDoAluguel').gt(req.query.valor)
-        .where('vagasNaGaragem').gt(req.query.vagas).exec((err, results) => {
+        .where('numeroDeQuartos').gte(req.query.quartos)
+        .where('numeroDeBanheiros').gte(req.query.banheiros)
+        .where('valorDoAluguel').gte(req.query.valor)
+        .where('vagasNaGaragem').gte(req.query.vagas).exec((err, results) => {
             if(err) throw err;
 
             res.json(results)
@@ -148,7 +148,7 @@ route.get('/casas', (req, res) => {
         casasParaAlugar.find({ tipo: req.query.tipo })
         .where('numeroDeQuartos').equals(req.query.quartos)
         .where('numeroDeBanheiros').equals(req.query.banheiros)
-        .where('valorDoAluguel').gt(req.query.valor)
+        .where('valorDoAluguel').gte(req.query.valor)
         .where('vagasNaGaragem').equals(req.query.vagas).exec((err, results) => {
             if(err) throw err;
 
