@@ -13,11 +13,27 @@ export default class Info extends Component {
             isDone: false,
         }
     }
+    
+    authenticate(){
+      return new Promise(resolve => setTimeout(resolve, 1000))
+    }
 
     componentDidMount = () => {
         axios.get(`/api/casas/info/${this.props.match.params.id}`)
             .then(res => this.setState({ currentInfo: res.data, isDone: true }))
             .catch(err => console.log(err))
+        
+        this.authenticate().then(() => {
+            const ele = document.getElementById('ipl-progress-indicator')
+            if(ele){
+              // fade out
+              ele.classList.add('available')
+              setTimeout(() => {
+                // remove from DOM
+                ele.outerHTML = ''
+              }, 1000)
+            }
+          })
     }
 
   render() {
