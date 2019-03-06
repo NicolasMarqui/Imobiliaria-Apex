@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const AlugarCasa = props => {
 
-    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, numeroQuartos, numeroBanheiro, vagasGaragem, numero , isGrid} = props;
+    const {id, tipo, mainImage, endereco, valorAluguel, areaTerreno, numeroQuartos, numeroBanheiro, vagasGaragem, numero , isGrid, scrollLeft} = props;
 
     return (
       <React.Fragment>
-        <div className={isGrid ? "showWrapperGrid" : "showWrapper"}>
+        <div className={isGrid ? `showWrapperGrid ${scrollLeft}` : `showWrapper ${scrollLeft}`}>
             <div className="img" style={{'backgroundImage': `url(${mainImage})`, 'backgroundSize': 'cover', 'backgroundPosition': 'center'}}>
             </div>
             <div className={isGrid ? "houseInfoGrid" : "houseInfo"}>

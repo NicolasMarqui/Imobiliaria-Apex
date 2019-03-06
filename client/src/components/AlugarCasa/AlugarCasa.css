@@ -8,6 +8,19 @@
     text-align: center;
 }
 
+.scrollLeft{
+    left: -500px;
+    -webkit-animation: slide-in 1s forwards;
+    animation: salve 3s forwards;
+}
+
+@-webkit-keyframes salve {
+    100% { left: 0}
+  }
+  @keyframes salve {
+    100% { left: 0}
+  }
+
 .showWrapperGrid{
     width: 20%; /*CHANGE 2*/
     min-height: 470px;

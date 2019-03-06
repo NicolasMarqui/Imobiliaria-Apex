@@ -1,10 +1,10 @@
 import React from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = (props) => {
     return(
         <React.Fragment>
-            <div className="footerWrapper">
+            <div className={`footerWrapper ${props.scrollLeft}`}>
                 <i className="fab fa-facebook-square fa-2x"></i>
                 <i className="fab fa-twitter fa-2x"></i>
                 <i className="fab fa-instagram fa-2x"></i>

@@ -40,13 +40,13 @@ class Header extends Component {
         <div className="centerText">
             <h1>Procure<br />sua nova <br />casa</h1>
             <br/>
-            <input type="text" placeholder="Digite um bairro..." value={this.state.bairro} onChange={this.handleBairro} name="bairro"/>
+            <input type="text" placeholder="Digite um bairro...(e.g Morada Do Sol)" value={this.state.bairro} onChange={this.handleBairro} name="bairro"/>
             <select name="Venda" value={this.state.selectedValue} onChange={this.handleTipo}>
                 <option value="alugar">Aluguel</option>
                 <option value="venda">Venda</option>
             </select>
             <button onClick={this.goToSearch}>Procure</button><br/>
-            <p>E.g Morada do Sol, Vila Avai..</p>
+            {/* <p>E.g Morada do Sol, Vila Avai..</p> */}
         </div>
       </div>
     )

@@ -198,6 +198,18 @@
     background-color: lightblue;
 }
 
+.fromTop{
+    left: -300px;
+    -webkit-animation: slide-in 1s forwards;
+    animation: salve 1s forwards;
+}
+
+@-webkit-keyframes salve {
+    100% { left: 0}
+  }
+  @keyframes salve {
+    100% { left: 0}
+  }
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .bodyWrapper{

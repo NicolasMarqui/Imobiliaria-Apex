@@ -2,7 +2,7 @@ import React from 'react';
 import './Nav.css';
 import menu from '../../assets/menu.png';
 import { Link , withRouter} from 'react-router-dom';
-import menuClose from '../../assets/colorClose.png'
+import menuClose from '../../assets/colorClose.png';
 
 class Nav extends React.Component{
   constructor(props){
@@ -28,9 +28,9 @@ class Nav extends React.Component{
           </div>
           <div className="navItems">
             <ul>
-                <Link to="/" style={{'color': 'black'}}><li>Home</li></Link>
-                <Link to="/casas/alugar" style={{'color': 'black'}}><li>Alugar</li></Link>
-                <Link to="/casas/novo/venda" style={{'color': 'black'}}><li>Comprar</li></Link>
+                <Link className="item" to="/" style={{'color': 'black'}}><li>Home</li></Link>
+                <Link className="item" to="/casas/alugar" style={{'color': 'black'}}><li>Alugar</li></Link>
+                <Link className="item" to="/casas/novo/venda" style={{'color': 'black'}}><li>Comprar</li></Link>
                 <li><a href="_" className="redBg">Contato</a></li>
             </ul>
           </div>

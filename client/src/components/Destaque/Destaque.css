@@ -5,6 +5,11 @@
     display: flex;
     flex-flow: column nowrap;
     position: relative;
+    transition: 0.5s;
+}
+
+.wdestWrapper:hover{
+    transform: scale(1.05);
 }
 
 .wdestWrapper .arrow-right{
@@ -49,6 +54,25 @@
     cursor: pointer;
     width: 100%;
 }
+
+.wdestWrapper .info .buttons button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s;
+}
+
+.show{
+    left: -300px;
+    -webkit-animation: slide-in 1s forwards;
+   animation: slide-in 1s forwards;
+}
+
+@-webkit-keyframes slide-in {
+    100% { left: 0 }
+  }
+  @keyframes slide-in {
+    100% { left: 0 }
+  }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {

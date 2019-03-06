@@ -110,6 +110,10 @@
     color: #fff;
 }
 
+.carrousel{
+    width: 50%;
+    height: 100vh;
+}
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
@@ -138,6 +142,10 @@
     .mainWrapper .secondWrapper .images{
         flex: 3;
     }
+
+    .carrousel{
+        width: 100%;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
@@ -155,10 +163,15 @@
         width: 80%;
         text-align: justify;
     }
+
+    .carrousel{
+        width: 100%;
+    }
 } 
 
 /* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {} 
+@media only screen and (min-width: 600px) and (max-width: 800px) {
+} 
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {} 

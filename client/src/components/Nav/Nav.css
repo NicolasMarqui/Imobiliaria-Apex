@@ -14,6 +14,7 @@
 
   .navWrapper .logoText h1{
     border: none;
+    transition: 0.5s ease all;
   }
   
   .navWrapper .logoText h1 span{
@@ -24,6 +25,10 @@
     width: 6%;
     border-color: #000000;
     margin-top: 0.5%;
+  }
+
+  .navWrapper .logoText h1:hover{
+    transform: scale(1.02);
   }
   
   .navWrapper .navItems{
@@ -48,6 +53,11 @@
   .navWrapper .navItems ul li a{
     text-decoration: none;
     color: #000000;
+  }
+
+  .navWrapper .navItems .item:hover{
+    border-bottom: 2px solid black;
+    transition: 0.3s ease-in-out all;
   }
   
   .redBg{

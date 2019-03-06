@@ -14,6 +14,8 @@ export default class Body extends Component {
       isDone : false,
       filter: [],
       todasLength: [],
+      show: 'hidden',
+      scrollTop: 'hidden'
     }
   }
 
@@ -23,27 +25,20 @@ export default class Body extends Component {
         this.setState({ isDone: true , filter: res.data.slice(6,9), todasLength: res.data})
       })
 
-    // axios.get('http://localhost:5000/api/casas/enderecos')
-    //   .then(res => {
-    //     this.setState({ enderecos: res.data, ende: true })
-    //   })
+      window.onscroll = () => this.handleScroll();
   }
 
   show = () => {
     console.log(this.state.destaques[Math.floor(Math.random() * this.state.destaques.length)])
   }
 
-  // showData = () => {
-  //   const provider = new OpenStreetMapProvider();
-
-  //   if(this.state.ende){
-  //     this.state.enderecos.map(el => (
-  //       provider
-  //       .search({ query: ` ${el.endeCompleto}, indaiatuba, SP` })
-  //       .then((res) => console.log())
-  //     ))
-  //   }
-  // }
+  handleScroll = () => {
+    if(document.documentElement.scrollTop > 430){
+      this.setState({ show: 'show' , scrollTop: 'fromTop'})
+    }else if(document.documentElement.scrollTop > 500){
+      this.setState({ scrollTop: 'fromTop' })
+    }
+  }
 
   render() {
     return (
@@ -79,16 +74,17 @@ export default class Body extends Component {
                   numeroQuartos={all.numeroDeQuartos}
                   vagasGaragem={all.vagasNaGaragem}
                   numeroBanheiro={all.numeroDeBanheiros}
-                  number={this.state.destaques.length}/>
+                  number={this.state.destaques.length}
+                  show={this.state.show}/>
             ))
             : ''
           }
           </div>
         </div>
         <div className="alugarApar">
-          <div className="imageSide"></div>
+          <div className={`imageSide ${this.state.scrollTop}`}></div>
           <div className="textSide">
-            <div className="alug">
+            <div className="alug" >
               <h1>Alugar<br />Apartamentos</h1>
             </div>
             <div className="btnAlugar">
@@ -98,7 +94,7 @@ export default class Body extends Component {
         </div>
         <div className="divider"></div>
         <div className="escolhaNois">
-          <div className="titleEscolha">
+          <div className={`titleEscolha ${this.state.scrollTop}`}>
             <h1>Porque<br />escolher nossa empresa?</h1>
           </div>
             <div className="lowerBox">

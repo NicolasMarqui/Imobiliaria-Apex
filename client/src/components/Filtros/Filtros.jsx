@@ -47,21 +47,21 @@ class Filtros extends React.Component{
                         <div className="bottomWrapper">
                             <select name="quartos" onChange={this.selectValues}>
                                 <option value="" disabled>N° de Quartos</option>
-                                <option defaultValue="2">2 Quartos</option>
+                                <option value="2">2 Quartos</option>
                                 <option value="3">3 Quartos</option>
                                 <option value="4">4 Quartos</option>
                                 <option value="5">Acima de 4 Quartos</option>
                             </select>
                             <select name="banheiro" onChange={this.selectValues}>
                                 <option value="" disabled >N° de Banheiros</option>
-                                <option defaultValue="2">2 Banheiros</option>
+                                <option value="2">2 Banheiros</option>
                                 <option value="3">3 Banheiros</option>
                                 <option value="4">4 Banheiros</option>
                                 <option value="5">Acima de 4 Banheiros</option>
                             </select>
                             <select name="vagas" onChange={this.selectValues}>
                                 <option value="" disabled>N° de Vagas na Garagem</option>
-                                <option defaultValue="1">1 Vaga</option>
+                                <option value="1">1 Vaga</option>
                                 <option value="2">2 Vagas</option>
                                 <option value="4">4 Vagas</option>
                                 <option value="5">Acima de 4 Vagas</option>

@@ -4,7 +4,6 @@ import axios from 'axios';
 import AlugarCasa from '../AlugarCasa/AlugarCasa';
 import queryString from 'query-string';
 import { Link } from 'react-router-dom';
-
 import Footer from '../Footer/Footer';
 
 import './Search.css'
@@ -16,6 +15,7 @@ export default class Search extends Component {
 
         this.state = {
             search: [],
+            isReady: false,
         }
     }
 
@@ -23,7 +23,7 @@ export default class Search extends Component {
         const values = queryString.parse(this.props.location.search);
 
         axios.get(`http://localhost:5000/api/casas/search/${this.props.match.params.name}?tipo=${values.tipo}`)
-            .then(res => this.setState({ search: res.data }))
+            .then(res => this.setState({ search: res.data , isReady: true}))
             .catch(err => console.log(err))
 
             console.log(this.state.search)
@@ -43,8 +43,8 @@ export default class Search extends Component {
                     {values.tipo} => {this.props.match.params.name}
                     </p>
                     {
-                        this.state.search.length === 0 ? <h1>Nenhuma casa encontrada</h1>
-                        : this.state.search.map(house => (
+                        this.state.isReady && this.state.search.length === 0 ? <h1>Nenhuma casa encontrada</h1>
+                        : this.state.isReady ? this.state.search.map(house => (
                             <AlugarCasa 
                             valorAluguel={house.valorDoAluguel}
                             mainImage={house.imagensDaCasa[0]}
@@ -58,6 +58,10 @@ export default class Search extends Component {
                             numero={house.numeroDaCasa}
                             tipo={house.tipo}/>
                         ))
+
+                        : 
+
+                        <h1>Carregando...</h1>
                     }
                     <p>{this.state.search.length}/ {this.state.search.length}</p>
                     <br/><br/><br/>

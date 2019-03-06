@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import Nav from '../Nav/Nav';
 import './Info.css';
-
 import axios from 'axios';
 
 export default class Info extends Component {
@@ -87,7 +86,6 @@ export default class Info extends Component {
                 ''
               }
             </div>
-            
         </div>
       </React.Fragment>
     )
