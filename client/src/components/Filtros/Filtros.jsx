@@ -41,7 +41,7 @@ class Filtros extends React.Component{
                             <select>
                                 <option value={this.props.tipo}>{this.props.tipo}</option>
                             </select>
-                            <input type="text" placeholder="Digite um valor de Aluguel" name="valor" onChange={this.selectValues}/>
+                            <input type="text" placeholder="Valor minimo de Aluguel" name="valor" onChange={this.selectValues}/>
                             <select disabled><option value="">Indaiatuba / SP</option></select>
                         </div>
                         <div className="bottomWrapper">
