@@ -41,7 +41,7 @@ class Nav extends React.Component{
            <ul>
                 <Link to="/" style={{'color': 'white'}}><li>Home</li></Link>
                 <Link to="/casas/alugar" style={{'color': 'white'}}><li>Alugar</li></Link>
-                <Link to="/casas/venda" style={{'color': 'white'}}><li onClick={this.changePage}>Comprar</li></Link>
+                <Link to="/casas/novo/venda" style={{'color': 'white'}}><li onClick={this.changePage}>Comprar</li></Link>
                 {/* <li><a href="_" className="redBg">Contato</a></li> */}
             </ul>
         </div>

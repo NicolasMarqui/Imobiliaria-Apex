@@ -77,7 +77,7 @@ export default class Body extends Component {
                   number={this.state.destaques.length}
                   show={this.state.show}/>
             ))
-            : ''
+            : <h1 style={{margin: 'auto'}}>Carregando...</h1>
           }
           </div>
         </div>
