@@ -38,7 +38,7 @@ class Header extends Component {
         <Nav color="transparent"/>
         <div className="overlay"></div>
         <div className="centerText">
-            <h1>Procure<br />sua nova <br />casa</h1>
+            <h1>Procure<br />sua <span style={{borderBottom: '2px solid red'}}>nova</span> <br />casa</h1>
             <br/>
             <input type="text" placeholder="Digite um bairro...(e.g Morada Do Sol)" value={this.state.bairro} onChange={this.handleBairro} name="bairro"/>
             <select name="Venda" value={this.state.selectedValue} onChange={this.handleTipo}>

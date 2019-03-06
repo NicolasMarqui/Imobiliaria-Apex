@@ -31,7 +31,7 @@ class Nav extends React.Component{
                 <Link className="item" to="/" style={{'color': 'black'}}><li>Home</li></Link>
                 <Link className="item" to="/casas/alugar" style={{'color': 'black'}}><li>Alugar</li></Link>
                 <Link className="item" to="/casas/novo/venda" style={{'color': 'black'}}><li>Comprar</li></Link>
-                <li><a href="_" className="redBg">Contato</a></li>
+                <li><a href="#contato" className="redBg">Contato</a></li>
             </ul>
           </div>
       </div>
@@ -42,7 +42,7 @@ class Nav extends React.Component{
                 <Link to="/" style={{'color': 'white'}}><li>Home</li></Link>
                 <Link to="/casas/alugar" style={{'color': 'white'}}><li>Alugar</li></Link>
                 <Link to="/casas/novo/venda" style={{'color': 'white'}}><li onClick={this.changePage}>Comprar</li></Link>
-                {/* <li><a href="_" className="redBg">Contato</a></li> */}
+                <li><a href="#contato" className="redBg">Contato</a></li>
             </ul>
         </div>
       </div>

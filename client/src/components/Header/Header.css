@@ -47,6 +47,7 @@
     border: none;
     color: #ffffff;
     cursor: pointer;
+    width: 20%;
   }
   
   .headerWrap .centerText p{
@@ -90,17 +91,20 @@
 
   .headerWrap .centerText input{
     font-size: 25px;
-    width: 60%;
+    width: 80%;
+    margin-bottom: 2%;
+    padding: 2%;
   }
 
   .headerWrap .centerText select{
-    width: 30%;
+    width: 50%;
+    padding: 2%;
   }
 
   .headerWrap .centerText button{
     margin-top: 5%;
     padding: 4%;
-    width: 30%;
+    width: 80%;
   }
 
   .headerWrap .centerText p{

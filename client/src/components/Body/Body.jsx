@@ -93,7 +93,7 @@ export default class Body extends Component {
           </div>
         </div>
         <div className="divider"></div>
-        <div className="contato">
+        <div className="contato" id="contato">
           <div className="titleContato">
             <h1>Fale Conosco</h1>
           </div>
