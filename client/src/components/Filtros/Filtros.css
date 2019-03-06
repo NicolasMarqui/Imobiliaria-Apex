@@ -113,6 +113,11 @@
         font-size: 20px;
         padding: 1%;
     }
+
+    .filterWrap button{
+        padding: 4%;
+        width: 50%;
+    }
 } 
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
