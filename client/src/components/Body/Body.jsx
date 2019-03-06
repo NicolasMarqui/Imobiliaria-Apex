@@ -43,6 +43,7 @@ export default class Body extends Component {
   render() {
     return (
       <React.Fragment>
+        <div className="divider"></div>
         <div className="bodyWrapper">
           <div className="item info1">
             <i className="fas fa-fist-raised fa-3x"></i>

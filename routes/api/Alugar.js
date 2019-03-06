@@ -139,7 +139,7 @@ route.get('/casas', (req, res) => {
         .where('numeroDeQuartos').gte(req.query.quartos)
         .where('numeroDeBanheiros').gte(req.query.banheiros)
         .where('valorDoAluguel').gte(req.query.valor)
-        .where('vagasNaGaragem').gte(req.query.vagas).exec((err, results) => {
+        .where('vagasNaGaragem').gte(req.query.vagas).sort({ valorDoAluguel: -1 }).exec((err, results) => {
             if(err) throw err;
 
             res.json(results)
@@ -149,7 +149,7 @@ route.get('/casas', (req, res) => {
         .where('numeroDeQuartos').equals(req.query.quartos)
         .where('numeroDeBanheiros').equals(req.query.banheiros)
         .where('valorDoAluguel').gte(req.query.valor)
-        .where('vagasNaGaragem').equals(req.query.vagas).exec((err, results) => {
+        .where('vagasNaGaragem').equals(req.query.vagas).sort({ valorDoAluguel: -1 }).exec((err, results) => {
             if(err) throw err;
 
             res.json(results)

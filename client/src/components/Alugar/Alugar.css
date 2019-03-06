@@ -53,11 +53,15 @@
     text-align: center;
     height: 100px;
     display: flex;
+    position: relative;
 }
 
 .valorResultado h3{
     margin: auto;
     font-size: 20px;
+    position: absolute;
+    bottom: 2%;
+    right: 2%;
 }
 
 .alugarWrapper .titleAndOther .filterPreco{
