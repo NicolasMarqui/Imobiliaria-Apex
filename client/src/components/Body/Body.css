@@ -131,72 +131,83 @@
     background-color: #4F4F4F;
 }
 
-/* ESCOLHA */
+/* CONTATO */
 
-.escolhaNois{
+.contato{
     width: 100%;
-    min-height: 80vh;
-    display: flex;
-    position: relative;
-    flex-flow: row nowrap;
+    min-height: 100vh;
 }
 
-.escolhaNois .titleEscolha{
-    position: absolute;
-    text-align: center;
-    top: 0;
-    left: 0;
+.contato .titleContato{
     width: 100%;
-    z-index: 2;
-}
-
-.escolhaNois .titleEscolha h1{
-    border-bottom: 3px solid black;
-    display: inline-block;
-    padding: 2% 2% 0.5% 2%;
-}
-
-.escolhaNois .lowerBox{
-    flex: 1;
-    background-color: #ffffff;
-    display: flex;
+    min-height: 60px;
     text-align: center;
 }
 
-.escolhaNois .lowerBox h1{
-    margin: auto;
+.contato .titleContato h1{
+    font-size: 35px;
+    padding: 5%;
 }
 
-.escolhaNois .lowerBox h1 code{
-    color: red;
-}
-
-.escolhaNois .middleBox{
-    flex: 1;
-    background: url('../../assets/client.jpeg') no-repeat center;
-    background-size: cover;
-    position: relative;
+.contato .mainForm{
+    width: 100%;
+    height: 91vh;
     display: flex;
 }
 
-.escolhaNois .middleBox .topMiddle{
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-color: #ffffff;
-    opacity: 0.8;
-}
-
-.escolhaNois .middleBox p{
-    z-index: 2;
-    margin: auto;
-    width: 40%;
-}
-
-.escolhaNois .topBox{
+.contato .mainForm .leftSideForm{
     flex: 1;
-    background-color: lightblue;
+    background-color: #3C3C3C;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
 }
+
+.contato .mainForm .leftSideForm input, textarea{
+    padding: 1%;
+    margin: 2% 0;
+    border: none;
+    border-bottom: 2px solid red;
+    background-color: transparent;
+    color: white;
+    width: 50%;
+}
+
+.contato .mainForm .rightSideForm{
+    flex: 1;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.contato .mainForm .rightSideForm input, textarea{
+    padding: 1%;
+    margin: 2% 0;
+    border: none;
+    border-bottom: 2px solid red;
+    background-color: transparent;
+    color: black;
+    width: 50%;
+    resize: none;
+}
+
+.contato .mainForm button{
+    width: 30%;
+    border: none;
+    cursor: pointer;
+    padding: 2%;
+}
+
+.contato .mainForm button:hover{
+    background-color: black;
+    color: white;
+    transition: 0.5s ease all;
+}
+
+
+
 
 .fromTop{
     left: -300px;
@@ -244,13 +255,27 @@
         top: 2%;
     }
 
-    .escolhaNois{
-        flex-flow: column-reverse nowrap;
-        min-height: 100vh;
+    .contato .mainForm{
+        flex-flow: column nowrap;
     }
 
-    .escolhaNois .titleEscolha h1{
-        font-size: 20px;
+    .contato .mainForm .rightSideForm{
+        display: none;
+    }
+
+    .contato .mainForm .leftSideForm h1{
+        display: none;
+    }
+
+    .contato .mainForm .leftSideForm input{
+        padding: 0;
+        font-size: 15px;
+        width: 80%;
+        height: 65px;
+    }
+
+    .contato .mainForm .leftSideForm textarea{
+        width: 80%;
     }
 } 
 
@@ -286,6 +311,22 @@
 
     .destaques .title{
         top: 2%;
+    }
+
+    .contato .mainForm{
+        flex-flow: column nowrap;
+    }
+
+    .contato .mainForm .leftSideForm h1{
+       display: none;
+    }
+
+    .contato .mainForm .leftSideForm button{
+        margin-bottom: 5%;
+    }
+
+    .contato .mainForm .rightSideForm{
+        display: none;
     }
 } 
 

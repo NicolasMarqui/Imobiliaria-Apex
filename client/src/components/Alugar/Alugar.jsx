@@ -22,10 +22,8 @@ class Alugar extends Component {
         }
     }
 
-    handleScroll = () => {
-      if(document.documentElement.scrollTop > 200){
-        this.setState({ scrollLeft: 'scrollLeft'})
-      }
+    authenticate(){
+      return new Promise(resolve => setTimeout(resolve, 2000))
     }
 
     // Paginator = (items, page, per_page) => {
@@ -49,14 +47,24 @@ class Alugar extends Component {
         //     console.log(this.state.casas.data)
         //   })
 
-          axios.get(`http://localhost:5000/api/casas/tipos/${this.props.match.params.tipo}`)
+          axios.get(`/api/casas/tipos/${this.props.match.params.tipo}`)
           .then(res => 
             {this.setState({casas: res.data, isDone: true}) 
-            console.log(this.state.casas.data)
           })
 
           this.props.history.push(`/casas/alugar`)
-          window.onscroll = () => this.handleScroll();
+
+          this.authenticate().then(() => {
+            const ele = document.getElementById('ipl-progress-indicator')
+            if(ele){
+              // fade out
+              ele.classList.add('available')
+              setTimeout(() => {
+                // remove from DOM
+                ele.outerHTML = ''
+              }, 2000)
+            }
+          })
       }
 
 
@@ -65,7 +73,7 @@ class Alugar extends Component {
       }
 
       clean = () => {
-        axios.get(`http://localhost:5000/api/casas/tipos/alugar`)
+        axios.get(`/api/casas/tipos/alugar`)
         .then(res => this.setState({ casas: res.data }))
         .catch(err => console.log(err))
 

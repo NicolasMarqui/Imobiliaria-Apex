@@ -8,3 +8,20 @@
   text-decoration: none;
 }
 
+.notWrapper{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+}
+
+.notWrapper .centerText404{
+  margin: auto;
+  width: 100%;
+  min-height: 200px;
+  text-align: center;
+}
+
+.notWrapper .centerText404 h1{
+  font-size: 65px;
+}
+

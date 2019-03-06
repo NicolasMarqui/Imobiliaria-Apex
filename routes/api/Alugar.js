@@ -6,8 +6,8 @@ const casasParaAlugar = require('../../models/AlugarCasa');
 route.post('/addalugar', (req, res) => {
     
     const novaCasa = new casasParaAlugar({
-        tipo: req.body.tipo.toLowerCase(),
-        endereco: req.body.endereco.toLowerCase(),
+        tipo: req.body.tipo.toLowerCase(), 
+        endereco: req.body.endereco.toLowerCase(), 
         numeroDaCasa: req.body.numeroDaCasa,
         valorDoAluguel: req.body.valorDoAluguel,
         descricao: req.body.descricao,

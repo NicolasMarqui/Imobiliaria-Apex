@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Body.css';
 import axios from 'axios';
 import Destaque from '../Destaque/Destaque'
-// import { OpenStreetMapProvider } from 'leaflet-geosearch';
+import { Link } from 'react-router-dom';
 
 export default class Body extends Component {
 
@@ -20,7 +20,7 @@ export default class Body extends Component {
   }
 
   componentDidMount = () => {
-    axios.get('http://localhost:5000/api/casas/all')
+    axios.get('/api/casas/all')
       .then(res => {
         this.setState({ isDone: true , filter: res.data.slice(6,9), todasLength: res.data})
       })
@@ -88,23 +88,35 @@ export default class Body extends Component {
               <h1>Alugar<br />Apartamentos</h1>
             </div>
             <div className="btnAlugar">
-              <button onClick={this.show}>Alugar</button>
+              <button onClick={this.show}><Link to="/apartamentos" style={{color: 'black'}}>Alugar</Link></button>
             </div>
           </div>
         </div>
         <div className="divider"></div>
-        <div className="escolhaNois">
-          <div className={`titleEscolha ${this.state.scrollTop}`}>
-            <h1>Porque<br />escolher nossa empresa?</h1>
+        <div className="contato">
+          <div className="titleContato">
+            <h1>Fale Conosco</h1>
           </div>
-            <div className="lowerBox">
-              <h1>Conheça todas <br /><code>{this.state.todasLength.length}</code><br/>Propriedades</h1>
+          <div className="mainForm">
+            <div className="leftSideForm">
+              <h1 style={{color: 'white'}}>Quero mandar Email</h1>
+              <input type="text" placeholder="Nome" />
+              <input type="text" placeholder="Email"/>
+              <textarea name="txt" cols="30" rows="10" placeholder="Sua mensagem" style={{resize:'none'}}></textarea>
+              <button >Enviar</button>
             </div>
-            <div className="middleBox">
-              <div className="topMiddle"></div>
-              <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque quam iste quae veritatis consequatur incidunt totam labore, molestias ea possimus!</p>
+            <div className="rightSideForm">
+              <h1>Quero fazer um orçamento</h1>
+              <input type="text" placeholder="Bairro.."/>
+              <input type="number" placeholder="N° quartos"/>
+              <input type="number" placeholder="N° banheiro"/>
+              <input type="number" placeholder="N° vagas na garagem"/>
+              <textarea cols="30" rows="10" placeholder="Mensagem Adicional"></textarea>
+              <button >Enviar</button>
             </div>
+          </div>
         </div>
+        <div className="divider"></div>
       </React.Fragment>
     )
   }

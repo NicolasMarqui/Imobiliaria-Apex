@@ -15,7 +15,7 @@ export default class Info extends Component {
     }
 
     componentDidMount = () => {
-        axios.get(`http://localhost:5000/api/casas/info/${this.props.match.params.id}`)
+        axios.get(`/api/casas/info/${this.props.match.params.id}`)
             .then(res => this.setState({ currentInfo: res.data, isDone: true }))
             .catch(err => console.log(err))
     }

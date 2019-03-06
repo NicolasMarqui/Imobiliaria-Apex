@@ -22,7 +22,7 @@ export default class Search extends Component {
     componentDidMount = () => {
         const values = queryString.parse(this.props.location.search);
 
-        axios.get(`http://localhost:5000/api/casas/search/${this.props.match.params.name}?tipo=${values.tipo}`)
+        axios.get(`/api/casas/search/${this.props.match.params.name}?tipo=${values.tipo}`)
             .then(res => this.setState({ search: res.data , isReady: true}))
             .catch(err => console.log(err))
 

@@ -38,8 +38,8 @@ const AlugarCasa = props => {
                         <p>R$ {tipo === 'alugar' ? `${valorAluguel},00 /mês` : `${valorAluguel},00`}</p>
                     </div>
                     <div className={isGrid ? "buyOrSeeGrid" : "buyOrSee"}>
-                        <button><Link to={`/info/${id}`} style={{'color': 'black', 'textDecoration': 'none'}}>Mais Informaçoes</Link></button>
-                        <button>{tipo === 'alugar' ? 'Alugar' : 'Comprar'}</button>
+                        <button><Link to={`/info/${id}`} style={{'color': 'white', 'textDecoration': 'none'}}>Mais Informaçoes</Link></button>
+                        <button disabled={true} >{tipo === 'alugar' ? 'Alugar' : 'Comprar'}</button>
                     </div>
                 </div>
             </div>

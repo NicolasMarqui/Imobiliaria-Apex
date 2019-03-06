@@ -19,12 +19,27 @@ class Comprar extends Component {
         }
     }
 
+    authenticate(){
+        return new Promise(resolve => setTimeout(resolve, 2000))
+      }
+
     componentDidMount = () =>{
-        axios.get(`http://localhost:5000/api/casas/venda/${this.props.match.params.tipo}`)
+        axios.get(`/api/casas/venda/${this.props.match.params.tipo}`)
           .then(res => this.setState({casas: res.data}))
 
           this.props.history.push(`/casas/novo/venda`);
 
+          this.authenticate().then(() => {
+            const ele = document.getElementById('ipl-progress-indicator')
+            if(ele){
+              // fade out
+              ele.classList.add('available')
+              setTimeout(() => {
+                // remove from DOM
+                ele.outerHTML = ''
+              }, 2000)
+            }
+          })
         
       }
 
@@ -33,7 +48,7 @@ class Comprar extends Component {
       }
 
       clear = () => {
-        axios.get(`http://localhost:5000/api/casas/tipos/venda`)
+        axios.get(`/api/casas/tipos/venda`)
         .then(res => this.setState({ casas: res.data }))
         .catch(err => console.log(err))
           this.props.history.push(`/casas/novo/venda`);
@@ -49,6 +64,7 @@ class Comprar extends Component {
                 <div className="filtro">
                     <button style={this.state.temCoisa  ? {'display':'inline-block'} : {'display': 'none'}} 
                     onClick={this.clear}
+                    className="clearFiltro"
                     ><i className="fas fa-times"></i> Limpar Filtros</button>
                 </div>
                 <div className="valorResultado">
