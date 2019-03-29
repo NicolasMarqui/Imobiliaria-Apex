@@ -10,3 +10,5 @@ Site criado para aprender mais sobre:
   - NodeJS
   - MongoDB
   - React Router
+
+**Filtros desativados temporariamente
